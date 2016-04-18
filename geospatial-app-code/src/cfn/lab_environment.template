@@ -1,0 +1,702 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "Creates the lab environment for the geo-spatial recommendation engine bootcamp",
+  "Parameters": {
+    "BucketName": {
+      "Type": "String"
+    }
+  },
+  "Mappings": {},
+  "Conditions": {},
+  "Resources": {
+    "WebsiteBucket": {
+      "Type": "AWS::S3::Bucket",
+      "Properties": {
+        "WebsiteConfiguration": {
+          "IndexDocument": "index.html"
+        }
+      }
+    },
+    "WWWBucketPolicy": {
+      "Type": "AWS::S3::BucketPolicy",
+      "Properties": {
+        "Bucket": {
+          "Ref": "WebsiteBucket"
+        },
+        "PolicyDocument": {
+          "Statement": [{
+            "Action": ["s3:GetObject"],
+            "Effect": "Allow",
+            "Resource": {
+              "Fn::Join": ["", ["arn:aws:s3:::", {
+                "Ref": "WebsiteBucket"
+              }, "/*"]]
+            },
+            "Principal": "*"
+          }]
+        }
+      }
+    },
+    "DataSourceBucket": {
+      "Type": "AWS::S3::Bucket"
+    },
+    "ConfigTable": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "AttributeDefinitions": [{
+          "AttributeName": "setting",
+          "AttributeType": "S"
+        }],
+        "KeySchema": [{
+          "AttributeName": "setting",
+          "KeyType": "HASH"
+        }],
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 25,
+          "WriteCapacityUnits": 25
+        },
+        "TableName": "config"
+      }
+    },
+    "RestaurantTable": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "AttributeDefinitions": [{
+          "AttributeName": "restaurantId",
+          "AttributeType": "S"
+        }],
+        "KeySchema": [{
+          "AttributeName": "restaurantId",
+          "KeyType": "HASH"
+        }],
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 25,
+          "WriteCapacityUnits": 25
+        },
+        "TableName": "restaurant"
+      },
+      "DependsOn": "RestaurantStreamLambda"
+    },
+    "DriverTable": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "AttributeDefinitions": [{
+          "AttributeName": "driverId",
+          "AttributeType": "S"
+        }],
+        "KeySchema": [{
+          "AttributeName": "driverId",
+          "KeyType": "HASH"
+        }],
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 25,
+          "WriteCapacityUnits": 25
+        },
+        "TableName": "driver"
+      },
+      "DependsOn": "DriverStreamLambda"
+    },
+    "UserProfileTable": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "AttributeDefinitions": [{
+          "AttributeName": "userId",
+          "AttributeType": "S"
+        }],
+        "KeySchema": [{
+          "AttributeName": "userId",
+          "KeyType": "HASH"
+        }],
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 25,
+          "WriteCapacityUnits": 25
+        },
+        "TableName": "userprofile"
+      }
+    },
+    "ApplicationExecutionRole": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "Path": {
+          "Fn::Join": ["", ["/", {
+            "Ref": "AWS::StackName"
+          }, "/"]]
+        },
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [{
+            "Effect": "Allow",
+            "Principal": {
+              "Service": ["lambda.amazonaws.com", "ec2.amazonaws.com", "apigateway.amazonaws.com"]
+            },
+            "Action": ["sts:AssumeRole"]
+          }]
+        }
+      }
+    },
+    "CloudFormationPolicy": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "qwiklab-cfnpolicy",
+        "Roles": [{
+          "Ref": "ApplicationExecutionRole"
+        }],
+        "PolicyDocument": {
+          "Statement": [{
+            "Resource": "*",
+            "Action": [
+              "cloudformation:DescribeStacks"
+            ],
+            "Sid": "1",
+            "Effect": "Allow"
+          }]
+        }
+      }
+    },
+    "ApiGatewayPolicy": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "qwiklab-apigwpolicy",
+        "Roles": [{
+          "Ref": "ApplicationExecutionRole"
+        }],
+        "PolicyDocument": {
+          "Statement": [{
+            "Resource": "*",
+            "Action": ["apigateway:*"],
+            "Sid": "1",
+            "Effect": "Allow"
+          }]
+        }
+      }
+    },
+    "IamPolicy": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "qwiklab-iampolicy",
+        "Roles": [{
+          "Ref": "ApplicationExecutionRole"
+        }],
+        "PolicyDocument": {
+          "Statement": [{
+            "Resource": {
+              "Fn::GetAtt": ["ApplicationExecutionRole", "Arn"]
+            },
+            "Action": ["iam:PassRole"],
+            "Sid": "1",
+            "Effect": "Allow"
+          }]
+        }
+      }
+    },
+    "DynamoPolicy": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "qwiklab-ddbpolicy",
+        "Roles": [{
+          "Ref": "ApplicationExecutionRole"
+        }],
+        "PolicyDocument": {
+          "Statement": [{
+            "Resource": [{
+              "Fn::Join": ["", ["arn:aws:dynamodb:", {
+                "Ref": "AWS::Region"
+              }, ":", {
+                "Ref": "AWS::AccountId"
+              }, ":table/", {
+                "Ref": "RestaurantTable"
+              }, "*"]]
+            }, {
+              "Fn::Join": ["", ["arn:aws:dynamodb:", {
+                "Ref": "AWS::Region"
+              }, ":", {
+                "Ref": "AWS::AccountId"
+              }, ":table/", {
+                "Ref": "DriverTable"
+              }, "*"]]
+            }, {
+              "Fn::Join": ["", ["arn:aws:dynamodb:", {
+                "Ref": "AWS::Region"
+              }, ":", {
+                "Ref": "AWS::AccountId"
+              }, ":table/", {
+                "Ref": "UserProfileTable"
+              }, "*"]]
+            }, {
+              "Fn::Join": ["", ["arn:aws:dynamodb:", {
+                "Ref": "AWS::Region"
+              }, ":", {
+                "Ref": "AWS::AccountId"
+              }, ":table/", {
+                "Ref": "ConfigTable"
+              }, "*"]]
+            }],
+            "Action": [
+              "dynamodb:BatchGetItem",
+              "dynamodb:BatchWriteItem",
+              "dynamodb:Query",
+              "dynamodb:PutItem",
+              "dynamodb:GetItem",
+              "dynamodb:Scan",
+              "dynamodb:UpdateItem",
+              "dynamodb:UpdateTable"
+            ],
+            "Sid": "1",
+            "Effect": "Allow"
+          }, {
+            "Resource": "*",
+            "Action": [
+              "dynamodb:DescribeTable",
+              "dynamodb:ListTables"
+            ],
+            "Sid": "2",
+            "Effect": "Allow"
+          }]
+        }
+      }
+    },
+    "S3Policy": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "qwiklab-s3policy",
+        "Roles": [{
+          "Ref": "ApplicationExecutionRole"
+        }],
+        "PolicyDocument": {
+          "Statement": [{
+            "Resource": [{
+              "Fn::Join": ["", ["arn:aws:s3:::", {
+                "Ref": "WebsiteBucket"
+              }, "*"]]
+            }, {
+              "Fn::Join": ["", ["arn:aws:s3:::", {
+                "Ref": "DataSourceBucket"
+              }, "*"]]
+            }],
+            "Action": [
+              "s3:ListBucket",
+              "s3:Put*",
+              "s3:Get*",
+              "s3:*MultipartUpload*",
+              "s3:DeleteObject*"
+            ],
+            "Sid": "1",
+            "Effect": "Allow"
+          }, {
+            "Resource": ["arn:aws:s3:::*"],
+            "Action": ["s3:ListAllMyBuckets", "s3:GetBucketLocation"],
+            "Sid": "2",
+            "Effect": "Allow"
+          }, {
+            "Effect": "Allow",
+            "Action": ["s3:ListBucket", "s3:GetObject"],
+            "Resource": [
+              "arn:aws:s3:::us-east-1-aws-training",
+              "arn:aws:s3:::us-east-1-aws-training/*"
+            ]
+          }, {
+            "Sid": "listBucket",
+            "Effect": "Allow",
+            "Action": "s3:ListBucket",
+            "Resource": [{
+              "Fn::Join": ["", ["arn:aws:s3:::", {
+                "Ref": "BucketName"
+              }]]
+            }]
+          }, {
+            "Sid": "getObject",
+            "Effect": "Allow",
+            "Action": "s3:GetObject",
+            "Resource": [{
+              "Fn::Join": ["", ["arn:aws:s3:::", {
+                "Ref": "BucketName"
+              }, "*"]]
+            }]
+          }]
+        }
+      }
+    },
+    "StreamsPolicy": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "qwiklab-streampolicy",
+        "Roles": [{
+          "Ref": "ApplicationExecutionRole"
+        }],
+        "PolicyDocument": {
+          "Statement": [{
+            "Resource": ["*"],
+            "Action": [
+              "dynamodb:GetRecords",
+              "dynamodb:GetShardIterator",
+              "dynamodb:DescribeStream",
+              "dynamodb:ListStreams"
+            ],
+            "Sid": "1",
+            "Effect": "Allow"
+          }]
+        }
+      }
+    },
+    "MachineLearningPolicy": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "qwiklab-mlpolicy",
+        "Roles": [{
+          "Ref": "ApplicationExecutionRole"
+        }],
+        "PolicyDocument": {
+          "Statement": [{
+            "Resource": ["*"],
+            "Action": [
+              "machinelearning:*"
+            ],
+            "Sid": "1",
+            "Effect": "Allow"
+          }]
+        }
+      }
+    },
+    "LambdaLogPolicy": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "qwiklab-lambdalogpolicy",
+        "Roles": [{
+          "Ref": "ApplicationExecutionRole"
+        }],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [{
+            "Effect": "Allow",
+            "Action": [
+              "logs:*"
+            ],
+            "Resource": "arn:aws:logs:*:*:*"
+          }]
+        }
+      }
+    },
+    "LambdaInvocationPolicy": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "qwiklab-lambdainvocationpolicy",
+        "Roles": [{
+          "Ref": "ApplicationExecutionRole"
+        }],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [{
+            "Effect": "Allow",
+            "Action": [
+              "lambda:InvokeFunction",
+              "lambda:CreateEventSourceMapping"
+            ],
+            "Resource": "*"
+          }]
+        }
+      }
+    },
+    "ElasticSearchPolicy": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "qwiklab-espolicy",
+        "Roles": [{
+          "Ref": "ApplicationExecutionRole"
+        }],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [{
+            "Effect": "Allow",
+            "Action": [
+              "es:*"
+            ],
+            "Resource": "*"
+          }]
+        }
+      }
+    },
+    "EnableStreamLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Handler": "enableStream.handler",
+        "Role": {
+          "Fn::GetAtt": ["ApplicationExecutionRole", "Arn"]
+        },
+        "Code": {
+          "S3Bucket": {
+            "Ref": "BucketName"
+          },
+          "S3Key": "lambda/bootstrap.zip"
+        },
+        "Runtime": "nodejs",
+        "Timeout": "25"
+      }
+    },
+    "ConfigLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Handler": "config.handler",
+        "Role": {
+          "Fn::GetAtt": ["ApplicationExecutionRole", "Arn"]
+        },
+        "Code": {
+          "S3Bucket": {
+            "Ref": "BucketName"
+          },
+          "S3Key": "lambda/bootstrap.zip"
+        },
+        "Runtime": "nodejs",
+        "Timeout": "25"
+      }
+    },
+    "SwaggerImportLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Handler": "swaggerImport.handler",
+        "Role": {
+          "Fn::GetAtt": ["ApplicationExecutionRole", "Arn"]
+        },
+        "Code": {
+          "S3Bucket": {
+            "Ref": "BucketName"
+          },
+          "S3Key": "lambda/swaggerImport.zip"
+        },
+        "Runtime": "nodejs",
+        "Timeout": "300",
+        "MemorySize": 1024
+      }
+    },
+    "UpdateMappingLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Handler": "updateMapping.handler",
+        "Role": {
+          "Fn::GetAtt": ["ApplicationExecutionRole", "Arn"]
+        },
+        "Code": {
+          "S3Bucket": {
+            "Ref": "BucketName"
+          },
+          "S3Key": "lambda/bootstrap.zip"
+        },
+        "Runtime": "nodejs",
+        "Timeout": "25",
+        "MemorySize": 128
+      }
+    },
+    "RestaurantLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Handler": "restaurants.handler",
+        "Role": {
+          "Fn::GetAtt": ["ApplicationExecutionRole", "Arn"]
+        },
+        "Code": {
+          "S3Bucket": {
+            "Ref": "BucketName"
+          },
+          "S3Key": "lambda/restaurants.zip"
+        },
+        "Runtime": "nodejs",
+        "Timeout": "25"
+      }
+    },
+    "RestaurantStreamLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Handler": "processRestaurantStream.handler",
+        "Role": {
+          "Fn::GetAtt": ["ApplicationExecutionRole", "Arn"]
+        },
+        "Code": {
+          "S3Bucket": {
+            "Ref": "BucketName"
+          },
+          "S3Key": "lambda/restaurants.zip"
+        },
+        "Runtime": "nodejs",
+        "Timeout": "25"
+      }
+    },
+    "RestaurantSearchLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Handler": "searchRestaurants.handler",
+        "Role": {
+          "Fn::GetAtt": ["ApplicationExecutionRole", "Arn"]
+        },
+        "Code": {
+          "S3Bucket": {
+            "Ref": "BucketName"
+          },
+          "S3Key": "lambda/restaurants.zip"
+        },
+        "Runtime": "nodejs",
+        "Timeout": "25"
+      }
+    },
+    "DriverLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Handler": "drivers.handler",
+        "Role": {
+          "Fn::GetAtt": ["ApplicationExecutionRole", "Arn"]
+        },
+        "Code": {
+          "S3Bucket": {
+            "Ref": "BucketName"
+          },
+          "S3Key": "lambda/drivers.zip"
+        },
+        "Runtime": "nodejs",
+        "Timeout": "25"
+      }
+    },
+    "DriverStreamLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Handler": "processDriverStream.handler",
+        "Role": {
+          "Fn::GetAtt": ["ApplicationExecutionRole", "Arn"]
+        },
+        "Code": {
+          "S3Bucket": {
+            "Ref": "BucketName"
+          },
+          "S3Key": "lambda/drivers.zip"
+        },
+        "Runtime": "nodejs",
+        "Timeout": "25"
+      }
+    },
+    "DriverSearchLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Handler": "searchDrivers.handler",
+        "Role": {
+          "Fn::GetAtt": ["ApplicationExecutionRole", "Arn"]
+        },
+        "Code": {
+          "S3Bucket": {
+            "Ref": "BucketName"
+          },
+          "S3Key": "lambda/drivers.zip"
+        },
+        "Runtime": "nodejs",
+        "Timeout": "25"
+      }
+    },
+    "UserProfileLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Handler": "users.handler",
+        "Role": {
+          "Fn::GetAtt": ["ApplicationExecutionRole", "Arn"]
+        },
+        "Code": {
+          "S3Bucket": {
+            "Ref": "BucketName"
+          },
+          "S3Key": "lambda/users.zip"
+        },
+        "Runtime": "nodejs",
+        "Timeout": "25"
+      }
+    },
+    "PredictionLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Handler": "predictions.handler",
+        "Role": {
+          "Fn::GetAtt": ["ApplicationExecutionRole", "Arn"]
+        },
+        "Code": {
+          "S3Bucket": {
+            "Ref": "BucketName"
+          },
+          "S3Key": "lambda/predictions.zip"
+        },
+        "Runtime": "nodejs",
+        "Timeout": "25"
+      }
+    }
+  },
+  "Outputs": {
+    "DataSourceBucket": {
+      "Value": {
+        "Ref": "DataSourceBucket"
+      }
+    },
+    "WebsiteBucket": {
+      "Value": {
+        "Ref": "WebsiteBucket"
+      }
+    },
+    "RestaurantLambdaArn": {
+      "Value": {
+        "Fn::GetAtt": ["RestaurantLambda", "Arn"]
+      }
+    },
+    "RestaurantStreamLambdaArn": {
+      "Value": {
+        "Fn::GetAtt": ["RestaurantStreamLambda", "Arn"]
+      }
+    },
+    "RestaurantSearchLambdaArn": {
+      "Value": {
+        "Fn::GetAtt": ["RestaurantSearchLambda", "Arn"]
+      }
+    },
+    "PredictionLambdaArn": {
+      "Value": {
+        "Fn::GetAtt": ["PredictionLambda", "Arn"]
+      }
+    },
+    "DriverLambdaArn": {
+      "Value": {
+        "Fn::GetAtt": ["DriverLambda", "Arn"]
+      }
+    },
+    "DriverStreamLambdaArn": {
+      "Value": {
+        "Fn::GetAtt": ["DriverStreamLambda", "Arn"]
+      }
+    },
+    "DriverSearchLambdaArn": {
+      "Value": {
+        "Fn::GetAtt": ["DriverSearchLambda", "Arn"]
+      }
+    },
+    "UserProfileLambdaArn": {
+      "Value": {
+        "Fn::GetAtt": ["UserProfileLambda", "Arn"]
+      }
+    },
+    "ConfigLambdaArn": {
+      "Value": {
+        "Fn::GetAtt": ["ConfigLambda", "Arn"]
+      }
+    },
+    "UpdateMappingLambdaArn": {
+      "Value": {
+        "Fn::GetAtt": ["UpdateMappingLambda", "Arn"]
+      }
+    },
+    "EnableStreamLambdaArn": {
+      "Value": {
+        "Fn::GetAtt": ["EnableStreamLambda", "Arn"]
+      }
+    },
+    "SwaggerImportLambdaArn": {
+      "Value": {
+        "Fn::GetAtt": ["SwaggerImportLambda", "Arn"]
+      }
+    },
+    "ApplicationExecutionRoleArn": {
+      "Value": {
+        "Fn::GetAtt": ["ApplicationExecutionRole", "Arn"]
+      }
+    }
+  }
+}

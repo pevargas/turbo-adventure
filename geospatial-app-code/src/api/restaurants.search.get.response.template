@@ -1,0 +1,25 @@
+#set($inputRoot = $input.path('$'))
+{
+  "type": "FeatureCollection",
+  "features":[
+    #foreach($elem in $inputRoot.restaurants)
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": ["$elem.location.geocoordinate.lon", "$elem.location.geocoordinate.lat"]
+            },
+            "properties": {
+                "title": "$elem.name",
+                "description": "$elem.cuisine_type",
+                "marker-color": "#FDCA00",
+                "marker-size": "medium",
+                "marker-symbol": "restaurant",
+                "price": "$elem.price",
+                "restaurantId": "$elem.restaurantId"
+            }
+        }
+        #if($foreach.hasNext),#end
+    #end
+  ]
+}

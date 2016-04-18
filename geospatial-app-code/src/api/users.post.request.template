@@ -1,0 +1,16 @@
+#set($inputRoot = $input.path('$')) {
+  "method": "POST",
+  "user": {
+    "email": "$inputRoot.email",
+    "budgetPreference": "$inputRoot.budgetPreference",
+    "gender": "$inputRoot.gender",
+    "age": "$inputRoot.age",
+    "deliveryAddress": {
+      "address_1": "$inputRoot.deliveryAddress.address_1",
+      "address_2": "$inputRoot.deliveryAddress.address_2",
+      "city": "$inputRoot.deliveryAddress.city",
+      "state": "$inputRoot.deliveryAddress.state",
+      "zip": "$inputRoot.deliveryAddress.zip"
+    }
+  }
+}

@@ -1,0 +1,960 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Restaurant Delivery Service with Real-Time Geospatial Indexing and Machine Learning Predictions.\n\n[Learn about Swagger](http://swagger.io) or join the IRC channel `#swagger` on irc.freenode.net.\n\nFor this sample, you can use the api key `special-key` to test the authorization filters\n",
+        "version": "0.0.5",
+        "title": "Restaurant Delivery Service"
+    },
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/restaurants/search": {
+            "get": {
+                "tags": [
+                    "restaurant"
+                ],
+                "summary": "Searches for restaurants",
+                "description": "Multiple search terms can be provided",
+                "operationId": "searchRestaurants",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "query",
+                    "name": "searchTerms",
+                    "description": "The terms to use when searching for restaurants",
+                    "required": false,
+                    "type": "string"
+                }, {
+                    "in": "query",
+                    "name": "locations",
+                    "description": "The upper left and lower right geocoordinates given as lon,lat,lon,lat",
+                    "required": false,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "headers": {
+                            "Access-Control-Allow-Origin": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid search terms"
+                    }
+                },
+                "x-amazon-apigateway-auth": {
+                    "type": "none"
+                },
+                "x-amazon-apigateway-integration": {
+                    "type": "aws",
+                    "uri": "arn:aws:apigateway:region:lambda:path/2015-03-31/functions/MyRestaurantSearchLambdaFunctionArn/invocations",
+                    "httpMethod": "POST",
+                    "credentials": "MyLambdaExecutionRoleArn",
+                    "requestTemplates": {
+                        "application/json": "{\"search\":\"true\",\"searchTerms\":\"$input.params('searchTerms')\"}"
+                    },
+                    "responses": {
+                        "default": {
+                            "statusCode": "200",
+                            "responseTemplates": {
+                                "application/json": "See restaurant.search.output.template"
+                            },
+                            "responseParameters": {
+                                "method.response.header.Access-Control-Allow-Origin": "'*'"
+                            }
+                        }
+                    }
+                }
+            },
+            "options": {
+                "responses": {
+                    "200": {
+                        "description": "Return the supported HTTP options for this resource",
+                        "headers": {
+                            "Access-Control-Allow-Headers": {
+                                "type": "string"
+                            },
+                            "Access-Control-Allow-Methods": {
+                                "type": "string"
+                            },
+                            "Access-Control-Allow-Origin": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "x-amazon-apigateway-auth": {
+                    "type": "none"
+                },
+                "x-amazon-apigateway-integration": {
+                    "type": "mock",
+                    "requestTemplates": {
+                      "application/json": "{\"statusCode\": 200}"
+                    },
+                    "responses": {
+                        "default": {
+                            "statusCode": "200",
+                            "responseParameters": {
+                                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                                "method.response.header.Access-Control-Allow-Methods": "'GET'",
+                                "method.response.header.Access-Control-Allow-Origin": "'*'"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/restaurants/{restaurantId}": {
+            "get": {
+                "tags": [
+                    "restaurant"
+                ],
+                "summary": "Find restaurant by ID",
+                "description": "Returns the restaurant for the given ID",
+                "operationId": "getRestaurantById",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "path",
+                    "name": "restaurantId",
+                    "description": "ID of the restaurant to fetch",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int64"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/restaurant"
+                        },
+                        "headers": {
+                            "Access-Control-Allow-Origin": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid ID supplied"
+                    },
+                    "404": {
+                        "description": "Restaurant not found"
+                    }
+                },
+                "x-amazon-apigateway-auth": {
+                    "type": "none"
+                },
+                "x-amazon-apigateway-integration": {
+                    "type": "aws",
+                    "uri": "arn:aws:apigateway:region:lambda:path/2015-03-31/functions/MyRestaurantLambdaFunctionArn/invocations",
+                    "httpMethod": "POST",
+                    "credentials": "MyLambdaExecutionRoleArn",
+                    "requestTemplates": {
+                        "application/json": "{\"restaurantId\":\"$input.params('restaurantId')\"}"
+                    },
+                    "responses": {
+                        "default": {
+                            "statusCode": "200",
+                            "responseParameters": {
+                                "method.response.header.Access-Control-Allow-Origin": "'*'"
+                            }
+                        }
+                    }
+                }
+            },
+            "options": {
+                "parameters": [{
+                    "in": "path",
+                    "name": "restaurantId",
+                    "description": "ID of the restaurant to fetch",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int64"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Return the supported HTTP options for this resource",
+                        "headers": {
+                            "Access-Control-Allow-Headers": {
+                                "type": "string"
+                            },
+                            "Access-Control-Allow-Methods": {
+                                "type": "string"
+                            },
+                            "Access-Control-Allow-Origin": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "x-amazon-apigateway-auth": {
+                    "type": "none"
+                },
+                "x-amazon-apigateway-integration": {
+                    "type": "mock",
+                    "requestTemplates": {
+                      "application/json": "{\"statusCode\": 200}"
+                    },
+                    "responses": {
+                        "default": {
+                            "statusCode": "200",
+                            "responseParameters": {
+                                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                                "method.response.header.Access-Control-Allow-Methods": "'GET'",
+                                "method.response.header.Access-Control-Allow-Origin": "'*'"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/predictions": {
+            "get": {
+                "tags": [
+                    "prediction"
+                ],
+                "summary": "Generates a prediction for the given restaurant and user",
+                "description": "Supply a restaurantId and email and this will generate a prediction of rating using machine learning",
+                "operationId": "predictRating",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "query",
+                    "name": "email",
+                    "description": "The email address (same as the userId)",
+                    "required": false,
+                    "type": "string"
+                }, {
+                    "in": "query",
+                    "name": "restaurantId",
+                    "description": "The restaurantId",
+                    "required": false,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "headers": {
+                            "Access-Control-Allow-Origin": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid parameters"
+                    }
+                },
+                "x-amazon-apigateway-auth": {
+                    "type": "none"
+                },
+                "x-amazon-apigateway-integration": {
+                    "type": "aws",
+                    "uri": "arn:aws:apigateway:region:lambda:path/2015-03-31/functions/MyPredictionLambdaFunctionArn/invocations",
+                    "httpMethod": "POST",
+                    "credentials": "MyLambdaExecutionRoleArn",
+                    "requestTemplates": {
+                        "application/json": "{\"restaurantId\":\"$input.params('restaurantId')\",\"email\":\"$input.params('email')\"}"
+                    },
+                    "responses": {
+                        "default": {
+                            "statusCode": "200",
+                            "responseParameters": {
+                                "method.response.header.Access-Control-Allow-Origin": "'*'"
+                            }
+                        }
+                    }
+                }
+            },
+            "options": {
+                "responses": {
+                    "200": {
+                        "description": "Return the supported HTTP options for this resource",
+                        "headers": {
+                            "Access-Control-Allow-Headers": {
+                                "type": "string"
+                            },
+                            "Access-Control-Allow-Methods": {
+                                "type": "string"
+                            },
+                            "Access-Control-Allow-Origin": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "x-amazon-apigateway-auth": {
+                    "type": "none"
+                },
+                "x-amazon-apigateway-integration": {
+                    "type": "mock",
+                    "requestTemplates": {
+                      "application/json": "{\"statusCode\": 200}"
+                    },
+                    "responses": {
+                        "default": {
+                            "statusCode": "200",
+                            "responseParameters": {
+                                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                                "method.response.header.Access-Control-Allow-Methods": "'GET'",
+                                "method.response.header.Access-Control-Allow-Origin": "'*'"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/users": {
+            "post": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Add a new user",
+                "description": "",
+                "operationId": "addUser",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "User object to be added",
+                    "required": false,
+                    "schema": {
+                        "$ref": "#/definitions/userprofile"
+                    }
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Successful Insert",
+                        "headers": {
+                            "Access-Control-Allow-Origin": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "x-amazon-apigateway-auth": {
+                    "type": "none"
+                },
+                "x-amazon-apigateway-integration": {
+                    "type": "aws",
+                    "uri": "arn:aws:apigateway:region:lambda:path/2015-03-31/functions/MyUserProfileLambdaFunctionArn/invocations",
+                    "httpMethod": "POST",
+                    "credentials": "MyLambdaExecutionRoleArn",
+                    "requestTemplates": {
+                        "application/json": "see user.post.input.template"
+                    },
+                    "responses": {
+                        "default": {
+                            "statusCode": "200",
+                            "responseParameters": {
+                                "method.response.header.Access-Control-Allow-Origin": "'*'"
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Update an existing user",
+                "description": "",
+                "operationId": "updateUser",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "User object to be updated",
+                    "required": false,
+                    "schema": {
+                        "$ref": "#/definitions/userprofile"
+                    }
+                }],
+                "responses": {
+                    "400": {
+                        "description": "Invalid ID supplied"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    },
+                    "405": {
+                        "description": "Validation exception"
+                    },
+                    "200": {
+                        "description": "Successful Update",
+                        "headers": {
+                            "Access-Control-Allow-Origin": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "x-amazon-apigateway-auth": {
+                    "type": "none"
+                },
+                "x-amazon-apigateway-integration": {
+                    "type": "aws",
+                    "uri": "arn:aws:apigateway:region:lambda:path/2015-03-31/functions/MyUserProfileLambdaFunctionArn/invocations",
+                    "httpMethod": "POST",
+                    "credentials": "MyLambdaExecutionRoleArn",
+                    "requestTemplates": {
+                        "application/json": "see user.post.input.template for an example. Note that the \"operation\" property will be different for the PUT"
+                    },
+                    "responses": {
+                        "default": {
+                            "statusCode": "200",
+                            "responseParameters": {
+                                "method.response.header.Access-Control-Allow-Origin": "'*'"
+                            }
+                        }
+                    }
+                }
+            },
+            "options": {
+                "responses": {
+                    "200": {
+                        "description": "Return the supported HTTP options for this resource",
+                        "headers": {
+                            "Access-Control-Allow-Headers": {
+                                "type": "string"
+                            },
+                            "Access-Control-Allow-Methods": {
+                                "type": "string"
+                            },
+                            "Access-Control-Allow-Origin": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "x-amazon-apigateway-auth": {
+                    "type": "none"
+                },
+                "x-amazon-apigateway-integration": {
+                    "type": "mock",
+                    "requestTemplates": {
+                      "application/json": "{\"statusCode\": 200}"
+                    },
+                    "responses": {
+                        "default": {
+                            "statusCode": "200",
+                            "responseParameters": {
+                                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                                "method.response.header.Access-Control-Allow-Methods": "'POST,PUT'",
+                                "method.response.header.Access-Control-Allow-Origin": "'*'"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{userId}": {
+            "get": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Retrieve the user by ID",
+                "description": "Returns the user for the given ID",
+                "operationId": "getUserById",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "path",
+                    "name": "userId",
+                    "description": "ID of the user to fetch",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int64"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "successful fetch",
+                        "headers": {
+                            "Access-Control-Allow-Origin": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid ID supplied"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                },
+                "x-amazon-apigateway-auth": {
+                    "type": "none"
+                },
+                "x-amazon-apigateway-integration": {
+                    "type": "aws",
+                    "uri": "arn:aws:apigateway:region:lambda:path/2015-03-31/functions/MyUserProfileLambdaFunctionArn/invocations",
+                    "httpMethod": "POST",
+                    "credentials": "MyLambdaExecutionRoleArn",
+                    "requestTemplates": {
+                        "application/json": "{\"userId\":\"$input.params('userId')\",\"method\":\"GET\"}"
+                    },
+                    "responses": {
+                        "default": {
+                            "statusCode": "200",
+                            "responseParameters": {
+                                "method.response.header.Access-Control-Allow-Origin": "'*'"
+                            }
+                        }
+                    }
+                }
+            },
+            "options": {
+                "parameters": [{
+                    "in": "path",
+                    "name": "userId",
+                    "description": "ID of the user to fetch",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int64"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Return the supported HTTP options for this resource",
+                        "headers": {
+                            "Access-Control-Allow-Headers": {
+                                "type": "string"
+                            },
+                            "Access-Control-Allow-Methods": {
+                                "type": "string"
+                            },
+                            "Access-Control-Allow-Origin": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "x-amazon-apigateway-auth": {
+                    "type": "none"
+                },
+                "x-amazon-apigateway-integration": {
+                    "type": "mock",
+                    "requestTemplates": {
+                      "application/json": "{\"statusCode\": 200}"
+                    },
+                    "responses": {
+                        "default": {
+                            "statusCode": "200",
+                            "responseParameters": {
+                                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                                "method.response.header.Access-Control-Allow-Methods": "'GET'",
+                                "method.response.header.Access-Control-Allow-Origin": "'*'"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/drivers": {
+            "post": {
+                "tags": [
+                    "driver"
+                ],
+                "summary": "Add a new driver",
+                "description": "",
+                "operationId": "addDriver",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "Driver object to be added",
+                    "required": false,
+                    "schema": {
+                        "$ref": "#/definitions/driver"
+                    }
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success",
+                        "headers": {
+                            "Access-Control-Allow-Origin": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "x-amazon-apigateway-auth": {
+                    "type": "none"
+                },
+                "x-amazon-apigateway-integration": {
+                    "type": "aws",
+                    "uri": "arn:aws:apigateway:region:lambda:path/2015-03-31/functions/MyDriverLambdaFunctionArn/invocations",
+                    "httpMethod": "POST",
+                    "credentials": "MyLambdaExecutionRoleArn",
+                    "requestTemplates": {
+                        "application/json": "See user.post.input.template for an example.  Use this as a basis for the driver template"
+                    },
+                    "responses": {
+                        "default": {
+                            "statusCode": "200",
+                            "responseParameters": {
+                                "method.response.header.Access-Control-Allow-Origin": "'*'"
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "driver"
+                ],
+                "summary": "Update an existing driver",
+                "description": "",
+                "operationId": "updateDriver",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "Driver object to be updated",
+                    "required": false,
+                    "schema": {
+                        "$ref": "#/definitions/driver"
+                    }
+                }],
+                "responses": {
+                    "400": {
+                        "description": "Invalid ID supplied"
+                    },
+                    "404": {
+                        "description": "Driver not found"
+                    },
+                    "405": {
+                        "description": "Validation exception"
+                    },
+                    "200": {
+                        "description": "Success",
+                        "headers": {
+                            "Access-Control-Allow-Origin": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "x-amazon-apigateway-auth": {
+                    "type": "none"
+                },
+                "x-amazon-apigateway-integration": {
+                    "type": "aws",
+                    "uri": "arn:aws:apigateway:region:lambda:path/2015-03-31/functions/MyDriverLambdaFunctionArn/invocations",
+                    "httpMethod": "POST",
+                    "credentials": "MyLambdaExecutionRoleArn",
+                    "requestTemplates": {
+                        "application/json": "See user.post.input.template for an example.  Use this as a basis for the driver template"
+                    },
+                    "responses": {
+                        "default": {
+                            "statusCode": "200",
+                            "responseParameters": {
+                                "method.response.header.Access-Control-Allow-Origin": "'*'"
+                            }
+                        }
+                    }
+                }
+            },
+            "options": {
+                "responses": {
+                    "200": {
+                        "description": "Return the supported HTTP options for this resource",
+                        "headers": {
+                            "Access-Control-Allow-Headers": {
+                                "type": "string"
+                            },
+                            "Access-Control-Allow-Methods": {
+                                "type": "string"
+                            },
+                            "Access-Control-Allow-Origin": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "x-amazon-apigateway-auth": {
+                    "type": "none"
+                },
+                "x-amazon-apigateway-integration": {
+                    "type": "mock",
+                    "requestTemplates": {
+                      "application/json": "{\"statusCode\": 200}"
+                    },
+                    "responses": {
+                        "default": {
+                            "statusCode": "200",
+                            "responseParameters": {
+                                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                                "method.response.header.Access-Control-Allow-Methods": "'POST,PUT'",
+                                "method.response.header.Access-Control-Allow-Origin": "'*'"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/drivers/search": {
+            "get": {
+                "tags": [
+                    "driver"
+                ],
+                "summary": "Searches for drivers within the given rectangle",
+                "description": "Searches for drivers within the given rectangle",
+                "operationId": "searchDrivers",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "query",
+                    "name": "locations",
+                    "description": "The upper left and lower right geocoordinates given as lon,lat,lon,lat",
+                    "required": false,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "headers": {
+                            "Access-Control-Allow-Origin": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid search terms"
+                    }
+                },
+                "x-amazon-apigateway-auth": {
+                    "type": "none"
+                },
+                "x-amazon-apigateway-integration": {
+                    "type": "aws",
+                    "uri": "arn:aws:apigateway:region:lambda:path/2015-03-31/functions/MyDriverSearchLambdaFunctionArn/invocations",
+                    "httpMethod": "POST",
+                    "credentials": "MyLambdaExecutionRoleArn",
+                    "requestTemplates": {
+                        "application/json": "{\"operation\":\"search\",\"locations\":\"$input.params('locations')\"}"
+                    },
+                    "responses": {
+                        "default": {
+                            "statusCode": "200",
+                            "responseTemplates": {
+                                "application/json": "See driver.search.output.template"
+                            },
+                            "responseParameters": {
+                                "method.response.header.Access-Control-Allow-Origin": "'*'"
+                            }
+                        }
+                    }
+                }
+            },
+            "options": {
+                "responses": {
+                    "200": {
+                        "description": "Return the supported HTTP options for this resource",
+                        "headers": {
+                            "Access-Control-Allow-Headers": {
+                                "type": "string"
+                            },
+                            "Access-Control-Allow-Methods": {
+                                "type": "string"
+                            },
+                            "Access-Control-Allow-Origin": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "x-amazon-apigateway-auth": {
+                    "type": "none"
+                },
+                "x-amazon-apigateway-integration": {
+                    "type": "mock",
+                    "requestTemplates": {
+                      "application/json": "{\"statusCode\": 200}"
+                    },
+                    "responses": {
+                        "default": {
+                            "statusCode": "200",
+                            "responseParameters": {
+                                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                                "method.response.header.Access-Control-Allow-Methods": "'GET'",
+                                "method.response.header.Access-Control-Allow-Origin": "'*'"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "geocoordinate": {
+            "type": "object",
+            "properties": {
+                "lat": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "lon": {
+                    "type": "number",
+                    "format": "float"
+                }
+            }
+        },
+        "location": {
+            "type": "object",
+            "properties": {
+                "city": {
+                    "type": "string"
+                },
+                "neighborhoods": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "state": {
+                    "type": "string"
+                },
+                "postal_code": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geocoordinate": {
+                    "$ref": "#/definitions/geocoordinate"
+                }
+            }
+        },
+        "restaurant": {
+            "type": "object",
+            "properties": {
+                "cuisine_type": {
+                    "type": "string"
+                },
+                "price": {
+                    "type": "number",
+                    "format": "int32"
+                },
+                "cuisine": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "location": {
+                    "$ref": "#/definitions/location"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "deliveryAddress": {
+            "type": "object",
+            "properties": {
+                "address_1": {
+                    "type": "string"
+                },
+                "address_2": {
+                    "type": "string"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "zipcode": {
+                    "type": "string"
+                }
+            }
+        },
+        "userprofile": {
+            "type": "object",
+            "properties": {
+                "userId": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "gender": {
+                    "type": "string"
+                },
+                "deliveryAddress": {
+                    "$ref": "#/definitions/deliveryAddress"
+                },
+                "budgetPreference": {
+                    "type": "number",
+                    "format": "int32"
+                }
+            }
+        },
+        "car": {
+            "type": "object",
+            "properties": {
+                "color": {
+                    "type": "string"
+                },
+                "make": {
+                    "type": "string"
+                }
+            }
+        },
+        "driver": {
+            "type": "object",
+            "properties": {
+                "driverId": {
+                    "type": "string"
+                },
+                "car": {
+                    "$ref": "#/definitions/car"
+                },
+                "location": {
+                    "type": "array",
+                    "items": {
+                        "type": "number",
+                        "format": "float"
+                    }
+                }
+            }
+        }
+    }
+}

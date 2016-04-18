@@ -1,0 +1,2398 @@
+[{
+	"cuisine": ["hawaiian", "asian fusion", "chinese"],
+	"name": "Liholiho Yacht Club",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Lower Nob Hill"],
+		"geocoordinate": {
+			"lat": 37.7883678084094,
+			"lon": -122.414625026286
+		},
+		"state": "CA",
+		"postal_code": "94109",
+		"address": ["871 Sutter St"]
+	},
+	"cuisine_type": "Asian",
+	"restaurantId": "647c"
+}, {
+	"cuisine": ["seafood"],
+	"name": "Fog Harbor Fish House",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["North Beach/Telegraph Hill", "Fisherman's Wharf"],
+		"geocoordinate": {
+			"lat": 37.8090391877147,
+			"lon": -122.410291436563
+		},
+		"state": "CA",
+		"postal_code": "94133",
+		"address": ["Pier 39", "Ste A-202"]
+	},
+	"cuisine_type": "Seafood",
+	"restaurantId": "a83d"
+}, {
+	"cuisine": ["british", "fish & chips", "seafood"],
+	"name": "The Codmother Fish and Chips",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["North Beach/Telegraph Hill", "Fisherman's Wharf"],
+		"geocoordinate": {
+			"lat": 37.8074698812357,
+			"lon": -122.417274713516
+		},
+		"state": "CA",
+		"postal_code": "94133",
+		"address": ["2824 Jones St"]
+	},
+	"cuisine_type": "Continental",
+	"restaurantId": "2d96"
+}, {
+	"cuisine": ["asian fusion"],
+	"name": "The House",
+	"price": 3,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["North Beach/Telegraph Hill"],
+		"geocoordinate": {
+			"lat": 37.7986422926188,
+			"lon": -122.407107129693
+		},
+		"state": "CA",
+		"postal_code": "94133",
+		"address": ["1230 Grant Ave"]
+	},
+	"cuisine_type": "Asian",
+	"restaurantId": "5bfe"
+}, {
+	"cuisine": ["seafood"],
+	"name": "Crab House At Pier 39",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["North Beach/Telegraph Hill", "Fisherman's Wharf"],
+		"geocoordinate": {
+			"lat": 37.8103094830162,
+			"lon": -122.41075694561
+		},
+		"state": "CA",
+		"postal_code": "94133",
+		"address": ["203 C Pier 39"]
+	},
+	"cuisine_type": "Seafood",
+	"restaurantId": "f5b5"
+}, {
+	"cuisine": ["american (new)"],
+	"name": "Gary Danko",
+	"price": 4,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Russian Hill", "Fisherman's Wharf"],
+		"geocoordinate": {
+			"lat": 37.8058701,
+			"lon": -122.420578
+		},
+		"state": "CA",
+		"postal_code": "94109",
+		"address": ["800 N Point St"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "7b63"
+}, {
+	"cuisine": ["cafes"],
+	"name": "Basik Cafe",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Nob Hill"],
+		"geocoordinate": {
+			"lat": 37.7946574694958,
+			"lon": -122.421409673989
+		},
+		"state": "CA",
+		"postal_code": "94109",
+		"address": ["1958 Polk St"]
+	},
+	"cuisine_type": "Cafe",
+	"restaurantId": "8089"
+}, {
+	"cuisine": ["american (new)"],
+	"name": "Stones Throw",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Russian Hill"],
+		"geocoordinate": {
+			"lat": 37.798122,
+			"lon": -122.418579
+		},
+		"state": "CA",
+		"postal_code": "94109",
+		"address": ["1896 Hyde St"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "1187"
+}, {
+	"cuisine": ["moroccan", "american (new)"],
+	"name": "Mourad Restaurant",
+	"price": 3,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Financial District", "SoMa"],
+		"geocoordinate": {
+			"lat": 37.7868336124639,
+			"lon": -122.399986118193
+		},
+		"state": "CA",
+		"postal_code": "94105",
+		"address": ["140 New Montgomery St", "Ste 1"]
+	},
+	"cuisine_type": "African",
+	"restaurantId": "7348"
+}, {
+	"cuisine": ["seafood", "italian"],
+	"name": "Sotto Mare",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["North Beach/Telegraph Hill"],
+		"geocoordinate": {
+			"lat": 37.7996206283569,
+			"lon": -122.408369779587
+		},
+		"state": "CA",
+		"postal_code": "94133",
+		"address": ["552 Green St"]
+	},
+	"cuisine_type": "Seafood",
+	"restaurantId": "e9c8"
+}, {
+	"cuisine": ["dim sum", "cantonese"],
+	"name": "Delicious Dim Sum",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Chinatown"],
+		"geocoordinate": {
+			"lat": 37.796051,
+			"lon": -122.4076004
+		},
+		"state": "CA",
+		"postal_code": "94133",
+		"address": ["752 Jackson St"]
+	},
+	"cuisine_type": "Asian",
+	"restaurantId": "3861"
+}, {
+	"cuisine": ["mexican"],
+	"name": "Don Pisto's",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["North Beach/Telegraph Hill"],
+		"geocoordinate": {
+			"lat": 37.8007813,
+			"lon": -122.4078369
+		},
+		"state": "CA",
+		"postal_code": "94133",
+		"address": ["510 Union St"]
+	},
+	"cuisine_type": "Latin American/Mexican",
+	"restaurantId": "ec63"
+}, {
+	"cuisine": ["gluten-free", "fast food"],
+	"name": "Hot Spud",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["North Beach/Telegraph Hill", "Fisherman's Wharf"],
+		"geocoordinate": {
+			"lat": 37.8078885376453,
+			"lon": -122.414005100727
+		},
+		"state": "CA",
+		"postal_code": "94133",
+		"address": ["2640 Mason St"]
+	},
+	"cuisine_type": "Vegetarian/vegan",
+	"restaurantId": "7b27"
+}, {
+	"cuisine": ["american (new)", "jazz & blues"],
+	"name": "Hillstone",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Embarcadero", "North Beach/Telegraph Hill"],
+		"geocoordinate": {
+			"lat": 37.805712595582,
+			"lon": -122.405280545354
+		},
+		"state": "CA",
+		"postal_code": "94111",
+		"address": ["1800 Montgomery St"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "4985"
+}, {
+	"cuisine": ["breakfast & brunch"],
+	"name": "Mama's on Washington Square",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["North Beach/Telegraph Hill"],
+		"geocoordinate": {
+			"lat": 37.801606,
+			"lon": -122.409599
+		},
+		"state": "CA",
+		"postal_code": "94133",
+		"address": ["1701 Stockton St"]
+	},
+	"cuisine_type": "Breakfast/Brunch",
+	"restaurantId": "2d1f"
+}, {
+	"cuisine": ["gastropubs"],
+	"name": "Hogwash",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Union Square"],
+		"geocoordinate": {
+			"lat": 37.7891754,
+			"lon": -122.4099292
+		},
+		"state": "CA",
+		"postal_code": "94102",
+		"address": ["582 Sutter St"]
+	},
+	"cuisine_type": "Bars/Pubs",
+	"restaurantId": "060b"
+}, {
+	"cuisine": ["seafood"],
+	"name": "Scoma's Restaurant",
+	"price": 3,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["North Beach/Telegraph Hill", "Fisherman's Wharf"],
+		"geocoordinate": {
+			"lat": 37.8089922074,
+			"lon": -122.418253049
+		},
+		"state": "CA",
+		"postal_code": "94133",
+		"address": ["1 Al Scoma Way", "Ste 1"]
+	},
+	"cuisine_type": "Seafood",
+	"restaurantId": "70b7"
+}, {
+	"cuisine": ["breakfast & brunch", "cafes"],
+	"name": "Hollywood Cafe",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["North Beach/Telegraph Hill", "Fisherman's Wharf"],
+		"geocoordinate": {
+			"lat": 37.8065796,
+			"lon": -122.4158401
+		},
+		"state": "CA",
+		"postal_code": "94133",
+		"address": ["530 N Point St"]
+	},
+	"cuisine_type": "Breakfast/Brunch",
+	"restaurantId": "675d"
+}, {
+	"cuisine": ["bars", "american (new)", "performing arts"],
+	"name": "PianoFight",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Tenderloin", "Union Square"],
+		"geocoordinate": {
+			"lat": 37.7838704221414,
+			"lon": -122.410740837442
+		},
+		"state": "CA",
+		"postal_code": "94102",
+		"address": ["144 Taylor St"]
+	},
+	"cuisine_type": "Bars/Pubs",
+	"restaurantId": "6253"
+}, {
+	"cuisine": ["greek", "mediterranean"],
+	"name": "Kokkari Estiatorio",
+	"price": 3,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Financial District"],
+		"geocoordinate": {
+			"lat": 37.7969612181187,
+			"lon": -122.399660646915
+		},
+		"state": "CA",
+		"postal_code": "94111",
+		"address": ["200 Jackson St"]
+	},
+	"cuisine_type": "Mediterranean",
+	"restaurantId": "69e1"
+}, {
+	"cuisine": ["spanish", "tapas/small plates"],
+	"name": "Coqueta",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Embarcadero"],
+		"geocoordinate": {
+			"lat": 37.7984671979957,
+			"lon": -122.396616339684
+		},
+		"state": "CA",
+		"postal_code": "94105",
+		"address": ["The Embarcadero", "Pier 5"]
+	},
+	"cuisine_type": "Continental",
+	"restaurantId": "d909"
+}, {
+	"cuisine": ["italian"],
+	"name": "Barbacco",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Financial District"],
+		"geocoordinate": {
+			"lat": 37.7935791,
+			"lon": -122.3993225
+		},
+		"state": "CA",
+		"postal_code": "94111",
+		"address": ["220 California St"]
+	},
+	"cuisine_type": "Continental",
+	"restaurantId": "e198"
+}, {
+	"cuisine": ["falafel", "vegan", "gluten-free"],
+	"name": "The Flying Falafel",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["SoMa"],
+		"geocoordinate": {
+			"lat": 37.78125,
+			"lon": -122.4113007
+		},
+		"state": "CA",
+		"postal_code": "94103",
+		"address": ["1051 Market St"]
+	},
+	"cuisine_type": "Mediterranean",
+	"restaurantId": "e1d4"
+}, {
+	"cuisine": ["southern", "american (new)"],
+	"name": "Hops & Hominy",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Union Square", "Financial District"],
+		"geocoordinate": {
+			"lat": 37.789438,
+			"lon": -122.40572
+		},
+		"state": "CA",
+		"postal_code": "94108",
+		"address": ["1 Tillman Pl"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "c4cf"
+}, {
+	"cuisine": ["pubs", "american (traditional)"],
+	"name": "Hopwater Distribution",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Nob Hill", "Union Square", "Lower Nob Hill"],
+		"geocoordinate": {
+			"lat": 37.7899538528782,
+			"lon": -122.411338984966
+		},
+		"state": "CA",
+		"postal_code": "94108",
+		"address": ["850 Bush St"]
+	},
+	"cuisine_type": "Bars/Pubs",
+	"restaurantId": "6938"
+}, {
+	"cuisine": ["seafood", "seafood markets", "live/raw food"],
+	"name": "Hog Island Oyster Co",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Embarcadero", "SoMa"],
+		"geocoordinate": {
+			"lat": 37.7954575817651,
+			"lon": -122.393317222595
+		},
+		"state": "CA",
+		"postal_code": "94111",
+		"address": ["1 Ferry Bldg", "Shop 11"]
+	},
+	"cuisine_type": "Seafood",
+	"restaurantId": "f1e4"
+}, {
+	"cuisine": ["sushi bars"],
+	"name": "GINTO Izakaya Japonaise",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Financial District"],
+		"geocoordinate": {
+			"lat": 37.7884598,
+			"lon": -122.4029388
+		},
+		"state": "CA",
+		"postal_code": "94104",
+		"address": ["658 Market St"]
+	},
+	"cuisine_type": "Asian",
+	"restaurantId": "6f14"
+}, {
+	"cuisine": ["spanish", "tapas bars", "basque"],
+	"name": "Bocadillos",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Financial District"],
+		"geocoordinate": {
+			"lat": 37.795831,
+			"lon": -122.403234
+		},
+		"state": "CA",
+		"postal_code": "94111",
+		"address": ["710 Montgomery St"]
+	},
+	"cuisine_type": "Continental",
+	"restaurantId": "ceaf"
+}, {
+	"cuisine": ["american (new)"],
+	"name": "Causwells",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Marina/Cow Hollow"],
+		"geocoordinate": {
+			"lat": 37.8001342713833,
+			"lon": -122.441983893514
+		},
+		"state": "CA",
+		"postal_code": "94123",
+		"address": ["2346 Chestnut St"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "f853"
+}, {
+	"cuisine": ["wine bars", "cafes"],
+	"name": "The Social Study",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Fillmore", "Western Addition", "Lower Pacific Heights"],
+		"geocoordinate": {
+			"lat": 37.7843447,
+			"lon": -122.4325223
+		},
+		"state": "CA",
+		"postal_code": "94115",
+		"address": ["1795 Geary Blvd"]
+	},
+	"cuisine_type": "Bars/Pubs",
+	"restaurantId": "9f5c"
+}, {
+	"cuisine": ["asian fusion"],
+	"name": "Chubby Noodle",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Marina/Cow Hollow"],
+		"geocoordinate": {
+			"lat": 37.7994561586758,
+			"lon": -122.437992095947
+		},
+		"state": "CA",
+		"postal_code": "94123",
+		"address": ["2205 Lombard St"]
+	},
+	"cuisine_type": "Asian",
+	"restaurantId": "a5d2"
+}, {
+	"cuisine": ["italian", "cocktail bars"],
+	"name": "Delarosa",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Marina/Cow Hollow"],
+		"geocoordinate": {
+			"lat": 37.8003663,
+			"lon": -122.4391165
+		},
+		"state": "CA",
+		"postal_code": "94123",
+		"address": ["2175 Chestnut St"]
+	},
+	"cuisine_type": "Continental",
+	"restaurantId": "232f"
+}, {
+	"cuisine": ["thai", "breakfast & brunch", "asian fusion"],
+	"name": "Blackwood",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Marina/Cow Hollow"],
+		"geocoordinate": {
+			"lat": 37.800591,
+			"lon": -122.438832
+		},
+		"state": "CA",
+		"postal_code": "94123",
+		"address": ["2150 Chestnut St"]
+	},
+	"cuisine_type": "Asian",
+	"restaurantId": "4745"
+}, {
+	"cuisine": ["burgers", "american (new)", "gastropubs"],
+	"name": "Umami Burger",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Marina/Cow Hollow"],
+		"geocoordinate": {
+			"lat": 37.7973057549931,
+			"lon": -122.435245513916
+		},
+		"state": "CA",
+		"postal_code": "94123",
+		"address": ["2184 Union St"]
+	},
+	"cuisine_type": "Deli/Sandwiches/Fast Food",
+	"restaurantId": "de39"
+}, {
+	"cuisine": ["museums", "cafes", "cocktail bars"],
+	"name": "The Interval At Long Now",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Marina/Cow Hollow"],
+		"geocoordinate": {
+			"lat": 37.8066279497009,
+			"lon": -122.432121163476
+		},
+		"state": "CA",
+		"postal_code": "94123",
+		"address": ["Fort Mason Center", "2 Marina Blvd, Bldg A"]
+	},
+	"cuisine_type": "Cafe",
+	"restaurantId": "ddd5"
+}, {
+	"cuisine": ["cocktail bars", "mexican"],
+	"name": "El Mercado Urbano at La Urbana",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["NoPa"],
+		"geocoordinate": {
+			"lat": 37.7757598000001,
+			"lon": -122.438249457755
+		},
+		"state": "CA",
+		"postal_code": "94117",
+		"address": ["661 Divisadero St"]
+	},
+	"cuisine_type": "Bars/Pubs",
+	"restaurantId": "2c16"
+}, {
+	"cuisine": ["french"],
+	"name": "Castagna",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Marina/Cow Hollow"],
+		"geocoordinate": {
+			"lat": 37.8005486,
+			"lon": -122.4365005
+		},
+		"state": "CA",
+		"postal_code": "94123",
+		"address": ["2015 Chestnut St"]
+	},
+	"cuisine_type": "Continental",
+	"restaurantId": "92a9"
+}, {
+	"cuisine": ["french", "burgers"],
+	"name": "Gamine",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Marina/Cow Hollow"],
+		"geocoordinate": {
+			"lat": 37.7969866991043,
+			"lon": -122.435943558812
+		},
+		"state": "CA",
+		"postal_code": "94123",
+		"address": ["2223 Union St"]
+	},
+	"cuisine_type": "Continental",
+	"restaurantId": "caa1"
+}, {
+	"cuisine": ["french", "breakfast & brunch"],
+	"name": "Baker Street Bistro",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Marina/Cow Hollow"],
+		"geocoordinate": {
+			"lat": 37.7981641888618,
+			"lon": -122.445950210094
+		},
+		"state": "CA",
+		"postal_code": "94123",
+		"address": ["2953 Baker St"]
+	},
+	"cuisine_type": "Continental",
+	"restaurantId": "964e"
+}, {
+	"cuisine": ["sandwiches", "salad", "delis"],
+	"name": "The Sandwich Spot",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Marina/Cow Hollow"],
+		"geocoordinate": {
+			"lat": 37.7997036480886,
+			"lon": -122.439576733921
+		},
+		"state": "CA",
+		"postal_code": "94123",
+		"address": ["3213 Pierce St"]
+	},
+	"cuisine_type": "Deli/Sandwiches/Fast Food",
+	"restaurantId": "d5d1"
+}, {
+	"cuisine": ["american (new)"],
+	"name": "Lite Bite",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Marina/Cow Hollow"],
+		"geocoordinate": {
+			"lat": 37.7980499,
+			"lon": -122.428772
+		},
+		"state": "CA",
+		"postal_code": "94123",
+		"address": ["1796 Union St"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "f602"
+}, {
+	"cuisine": ["american (traditional)"],
+	"name": "Spinnerie",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Nob Hill"],
+		"geocoordinate": {
+			"lat": 37.7897018791605,
+			"lon": -122.420643232763
+		},
+		"state": "CA",
+		"postal_code": "94109",
+		"address": ["1401 Polk St"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "6e28"
+}, {
+	"cuisine": ["american (new)", "sandwiches", "salad"],
+	"name": "Pluto's",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Marina/Cow Hollow"],
+		"geocoordinate": {
+			"lat": 37.8000298,
+			"lon": -122.4408264
+		},
+		"state": "CA",
+		"postal_code": "94123",
+		"address": ["3258 Scott St"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "8445"
+}, {
+	"cuisine": ["delis", "sandwiches", "cheese shops"],
+	"name": "Lucca Delicatessen",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Marina/Cow Hollow"],
+		"geocoordinate": {
+			"lat": 37.8006516,
+			"lon": -122.4383621
+		},
+		"state": "CA",
+		"postal_code": "94123",
+		"address": ["2120 Chestnut St"]
+	},
+	"cuisine_type": "Deli/Sandwiches/Fast Food",
+	"restaurantId": "9a23"
+}, {
+	"cuisine": ["burmese"],
+	"name": "Burmese Kitchen",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Inner Richmond"],
+		"geocoordinate": {
+			"lat": 37.780887,
+			"lon": -122.460334
+		},
+		"state": "CA",
+		"postal_code": "94118",
+		"address": ["3815 Geary Blvd"]
+	},
+	"cuisine_type": "Asian",
+	"restaurantId": "53b1"
+}, {
+	"cuisine": ["latin american", "food stands", "mexican"],
+	"name": "Cholita Linda",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Presidio"],
+		"geocoordinate": {
+			"lat": 37.8007469,
+			"lon": -122.4588242
+		},
+		"state": "CA",
+		"postal_code": "94129",
+		"address": ["103 Montgomery St"]
+	},
+	"cuisine_type": "Latin American/Mexican",
+	"restaurantId": "3012"
+}, {
+	"cuisine": ["burmese"],
+	"name": "Mandalay",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Inner Richmond"],
+		"geocoordinate": {
+			"lat": 37.7851486,
+			"lon": -122.4643936
+		},
+		"state": "CA",
+		"postal_code": "94118",
+		"address": ["4348 California St"]
+	},
+	"cuisine_type": "Asian",
+	"restaurantId": "f036"
+}, {
+	"cuisine": ["burmese"],
+	"name": "Burma Superstar",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Inner Richmond"],
+		"geocoordinate": {
+			"lat": 37.7828903,
+			"lon": -122.462532
+		},
+		"state": "CA",
+		"postal_code": "94118",
+		"address": ["309 Clement St"]
+	},
+	"cuisine_type": "Asian",
+	"restaurantId": "2223"
+}, {
+	"cuisine": ["malaysian"],
+	"name": "Lime Tree Southeast Asian Kitchen",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Inner Richmond"],
+		"geocoordinate": {
+			"lat": 37.7827421185773,
+			"lon": -122.468323160254
+		},
+		"state": "CA",
+		"postal_code": "94118",
+		"address": ["836 Clement St"]
+	},
+	"cuisine_type": "Asian",
+	"restaurantId": "80ca"
+}, {
+	"cuisine": ["turkish", "mediterranean"],
+	"name": "Kitchen Istanbul",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Inner Richmond"],
+		"geocoordinate": {
+			"lat": 37.7828843958139,
+			"lon": -122.463225816122
+		},
+		"state": "CA",
+		"postal_code": "94118",
+		"address": ["349 Clement St"]
+	},
+	"cuisine_type": "Mediterranean",
+	"restaurantId": "70bc"
+}, {
+	"cuisine": ["french"],
+	"name": "Chapeau!",
+	"price": 3,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Inner Richmond"],
+		"geocoordinate": {
+			"lat": 37.7832718,
+			"lon": -122.4606628
+		},
+		"state": "CA",
+		"postal_code": "94118",
+		"address": ["126 Clement St"]
+	},
+	"cuisine_type": "Continental",
+	"restaurantId": "a0f9"
+}, {
+	"cuisine": ["vietnamese"],
+	"name": "Picnix Bistro",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Presidio Heights"],
+		"geocoordinate": {
+			"lat": 37.7870370447636,
+			"lon": -122.456375956535
+		},
+		"state": "CA",
+		"postal_code": "94118",
+		"address": ["3872 Sacramento St"]
+	},
+	"cuisine_type": "Asian",
+	"restaurantId": "e0ae"
+}, {
+	"cuisine": ["hawaiian", "breakfast & brunch", "asian fusion"],
+	"name": "Grindz",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Inner Richmond"],
+		"geocoordinate": {
+			"lat": 37.7829208,
+			"lon": -122.4683304
+		},
+		"state": "CA",
+		"postal_code": "94118",
+		"address": ["832 Clement St"]
+	},
+	"cuisine_type": "Asian",
+	"restaurantId": "9e2e"
+}, {
+	"cuisine": ["vietnamese", "sandwiches"],
+	"name": "Cafe Bunn Mi",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Inner Richmond"],
+		"geocoordinate": {
+			"lat": 37.7829272300005,
+			"lon": -122.463821768761
+		},
+		"state": "CA",
+		"postal_code": "94118",
+		"address": ["417 Clement St"]
+	},
+	"cuisine_type": "Asian",
+	"restaurantId": "2afd"
+}, {
+	"cuisine": ["thai"],
+	"name": "King of Thai Noodle House",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Inner Richmond"],
+		"geocoordinate": {
+			"lat": 37.7826195,
+			"lon": -122.4661407
+		},
+		"state": "CA",
+		"postal_code": "94118",
+		"address": ["639 Clement St"]
+	},
+	"cuisine_type": "Asian",
+	"restaurantId": "2358"
+}, {
+	"cuisine": ["german", "comfort food", "polish"],
+	"name": "Cafe Europa",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Inner Richmond"],
+		"geocoordinate": {
+			"lat": 37.7851346880198,
+			"lon": -122.46381573379
+		},
+		"state": "CA",
+		"postal_code": "94118",
+		"address": ["4318 California St"]
+	},
+	"cuisine_type": "Continental",
+	"restaurantId": "b7f3"
+}, {
+	"cuisine": ["burmese", "asian fusion", "breakfast & brunch"],
+	"name": "B Star Bar",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Inner Richmond"],
+		"geocoordinate": {
+			"lat": 37.7829819,
+			"lon": -122.4606476
+		},
+		"state": "CA",
+		"postal_code": "94118",
+		"address": ["127 Clement St"]
+	},
+	"cuisine_type": "Asian",
+	"restaurantId": "4528"
+}, {
+	"cuisine": ["japanese"],
+	"name": "Halu",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Inner Richmond"],
+		"geocoordinate": {
+			"lat": 37.7826187759638,
+			"lon": -122.466495931149
+		},
+		"state": "CA",
+		"postal_code": "94118",
+		"address": ["312 8th Ave"]
+	},
+	"cuisine_type": "Asian",
+	"restaurantId": "2e3f"
+}, {
+	"cuisine": ["spanish"],
+	"name": "The Commissary",
+	"price": 3,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Presidio"],
+		"geocoordinate": {
+			"lat": 37.7997587209683,
+			"lon": -122.459699660711
+		},
+		"state": "CA",
+		"postal_code": "94129",
+		"address": ["101 Montgomery St"]
+	},
+	"cuisine_type": "Continental",
+	"restaurantId": "6a7a"
+}, {
+	"cuisine": ["tapas/small plates", "american (new)"],
+	"name": "State Bird Provisions",
+	"price": 3,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Western Addition"],
+		"geocoordinate": {
+			"lat": 37.78374,
+			"lon": -122.433005
+		},
+		"state": "CA",
+		"postal_code": "94115",
+		"address": ["1529 Fillmore St"]
+	},
+	"cuisine_type": "Continental",
+	"restaurantId": "e0fb"
+}, {
+	"cuisine": ["wine bars", "gastropubs"],
+	"name": "Fat Angel",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Western Addition"],
+		"geocoordinate": {
+			"lat": 37.783319813712005,
+			"lon": -122.43301932223
+		},
+		"state": "CA",
+		"postal_code": "94115",
+		"address": ["1740 O'Farrell St"]
+	},
+	"cuisine_type": "Bars/Pubs",
+	"restaurantId": "f78b"
+}, {
+	"cuisine": ["seafood", "fish & chips"],
+	"name": "Woodhouse Fish Co.",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Lower Pacific Heights"],
+		"geocoordinate": {
+			"lat": 37.787488,
+			"lon": -122.433446
+		},
+		"state": "CA",
+		"postal_code": "94115",
+		"address": ["1914 Fillmore St"]
+	},
+	"cuisine_type": "Seafood",
+	"restaurantId": "0b81"
+}, {
+	"cuisine": ["american (traditional)", "breakfast & brunch"],
+	"name": "Sweet Maple",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Lower Pacific Heights"],
+		"geocoordinate": {
+			"lat": 37.785735681426,
+			"lon": -122.43507770852
+		},
+		"state": "CA",
+		"postal_code": "94115",
+		"address": ["2101 Sutter St"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "a9ef"
+}, {
+	"cuisine": ["tapas bars", "peruvian", "seafood"],
+	"name": "Fresca",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Pacific Heights"],
+		"geocoordinate": {
+			"lat": 37.7893105,
+			"lon": -122.433609
+		},
+		"state": "CA",
+		"postal_code": "94115",
+		"address": ["2114 Fillmore St"]
+	},
+	"cuisine_type": "Continental",
+	"restaurantId": "320a"
+}, {
+	"cuisine": ["japanese", "tapas/small plates", "lounges"],
+	"name": "Izakaya Kou",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Fillmore", "Western Addition"],
+		"geocoordinate": {
+			"lat": 37.7841015359937,
+			"lon": -122.432725868914
+		},
+		"state": "CA",
+		"postal_code": "94115",
+		"address": ["1560 Fillmore St"]
+	},
+	"cuisine_type": "Asian",
+	"restaurantId": "7b6d"
+}, {
+	"cuisine": ["american (new)"],
+	"name": "The Progress",
+	"price": 3,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Western Addition"],
+		"geocoordinate": {
+			"lat": 37.783661,
+			"lon": -122.433075
+		},
+		"state": "CA",
+		"postal_code": "94115",
+		"address": ["1525 Fillmore St"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "630a"
+}, {
+	"cuisine": ["burgers", "pubs", "wine bars"],
+	"name": "Bistro SF Grill",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Lower Pacific Heights"],
+		"geocoordinate": {
+			"lat": 37.7878304,
+			"lon": -122.4407272
+		},
+		"state": "CA",
+		"postal_code": "94115",
+		"address": ["2819 California St"]
+	},
+	"cuisine_type": "Deli/Sandwiches/Fast Food",
+	"restaurantId": "db22"
+}, {
+	"cuisine": ["italian"],
+	"name": "SPQR",
+	"price": 3,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Lower Pacific Heights"],
+		"geocoordinate": {
+			"lat": 37.7873180061579,
+			"lon": -122.433557063341
+		},
+		"state": "CA",
+		"postal_code": "94115",
+		"address": ["1911 Fillmore St"]
+	},
+	"cuisine_type": "Continental",
+	"restaurantId": "28c8"
+}, {
+	"cuisine": ["japanese", "bars"],
+	"name": "Kappa Japanese Restaurant",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Japantown", "Lower Pacific Heights"],
+		"geocoordinate": {
+			"lat": 37.7856309670289,
+			"lon": -122.430074214935
+		},
+		"state": "CA",
+		"postal_code": "94115",
+		"address": ["1700 Post St", "Ste K"]
+	},
+	"cuisine_type": "Asian",
+	"restaurantId": "3146"
+}, {
+	"cuisine": ["latin american"],
+	"name": "Manos Nouveau",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Castro"],
+		"geocoordinate": {
+			"lat": 37.7628288,
+			"lon": -122.4343796
+		},
+		"state": "CA",
+		"postal_code": "94114",
+		"address": ["3970 17th St"]
+	},
+	"cuisine_type": "Latin American/Mexican",
+	"restaurantId": "3d11"
+}, {
+	"cuisine": ["breakfast & brunch", "cafes"],
+	"name": "Bacon Bacon",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Ashbury Heights"],
+		"geocoordinate": {
+			"lat": 37.7670478820801,
+			"lon": -122.446640014648
+		},
+		"state": "CA",
+		"postal_code": "94117",
+		"address": ["205 A Frederick St"]
+	},
+	"cuisine_type": "Breakfast/Brunch",
+	"restaurantId": "1053"
+}, {
+	"cuisine": ["mexican", "gluten-free"],
+	"name": "Nopalito",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Lower Haight"],
+		"geocoordinate": {
+			"lat": 37.77343530099,
+			"lon": -122.438993048014
+		},
+		"state": "CA",
+		"postal_code": "94117",
+		"address": ["306 Broderick St"]
+	},
+	"cuisine_type": "Latin American/Mexican",
+	"restaurantId": "7ddd"
+}, {
+	"cuisine": ["mexican"],
+	"name": "Padrecito",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Cole Valley"],
+		"geocoordinate": {
+			"lat": 37.7656775,
+			"lon": -122.4500746
+		},
+		"state": "CA",
+		"postal_code": "94117",
+		"address": ["901 Cole St"]
+	},
+	"cuisine_type": "Latin American/Mexican",
+	"restaurantId": "4924"
+}, {
+	"cuisine": ["breweries", "comfort food", "bars"],
+	"name": "Barrel Head Brewhouse",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["NoPa"],
+		"geocoordinate": {
+			"lat": 37.7757521780078,
+			"lon": -122.446032238623
+		},
+		"state": "CA",
+		"postal_code": "94117",
+		"address": ["1785 Fulton St"]
+	},
+	"cuisine_type": "Bars/Pubs",
+	"restaurantId": "32fb"
+}, {
+	"cuisine": ["mexican"],
+	"name": "The Little Chihuahua",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Lower Haight"],
+		"geocoordinate": {
+			"lat": 37.7720413,
+			"lon": -122.436882
+		},
+		"state": "CA",
+		"postal_code": "94117",
+		"address": ["292 Divisadero St"]
+	},
+	"cuisine_type": "Latin American/Mexican",
+	"restaurantId": "b7ec"
+}, {
+	"cuisine": ["breakfast & brunch", "french"],
+	"name": "Zazie",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Cole Valley"],
+		"geocoordinate": {
+			"lat": 37.765244,
+			"lon": -122.4501138
+		},
+		"state": "CA",
+		"postal_code": "94117",
+		"address": ["941 Cole St"]
+	},
+	"cuisine_type": "Breakfast/Brunch",
+	"restaurantId": "a527"
+}, {
+	"cuisine": ["caribbean", "cuban", "tapas bars"],
+	"name": "Cha Cha Cha",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["The Haight"],
+		"geocoordinate": {
+			"lat": 37.769123,
+			"lon": -122.452034
+		},
+		"state": "CA",
+		"postal_code": "94117",
+		"address": ["1801 Haight St"]
+	},
+	"cuisine_type": "Latin American/Mexican",
+	"restaurantId": "c1e6"
+}, {
+	"cuisine": ["american (new)", "gastropubs", "cocktail bars"],
+	"name": "Maven",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Lower Haight"],
+		"geocoordinate": {
+			"lat": 37.772233,
+			"lon": -122.432007
+		},
+		"state": "CA",
+		"postal_code": "94117",
+		"address": ["598 Haight St"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "a900"
+}, {
+	"cuisine": ["bars", "gastropubs", "american (new)"],
+	"name": "Fulton bistro",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["NoPa"],
+		"geocoordinate": {
+			"lat": 37.7756635,
+			"lon": -122.4469542
+		},
+		"state": "CA",
+		"postal_code": "94117",
+		"address": ["1813 Fulton St"]
+	},
+	"cuisine_type": "Bars/Pubs",
+	"restaurantId": "c04c"
+}, {
+	"cuisine": ["italian", "pizza"],
+	"name": "Ragazza",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Lower Haight"],
+		"geocoordinate": {
+			"lat": 37.7724049240351,
+			"lon": -122.437329590321
+		},
+		"state": "CA",
+		"postal_code": "94117",
+		"address": ["311 Divisadero St"]
+	},
+	"cuisine_type": "Continental",
+	"restaurantId": "684b"
+}, {
+	"cuisine": ["sandwiches"],
+	"name": "Ike's Place",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Castro"],
+		"geocoordinate": {
+			"lat": 37.7642944915352,
+			"lon": -122.430696487427
+		},
+		"state": "CA",
+		"postal_code": "94114",
+		"address": ["3489 16th St"]
+	},
+	"cuisine_type": "Deli/Sandwiches/Fast Food",
+	"restaurantId": "7abe"
+}, {
+	"cuisine": ["french"],
+	"name": "Sous Beurre Kitchen",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Mission"],
+		"geocoordinate": {
+			"lat": 37.7532501,
+			"lon": -122.4067001
+		},
+		"state": "CA",
+		"postal_code": "94110",
+		"address": ["2704 24th St"]
+	},
+	"cuisine_type": "Continental",
+	"restaurantId": "2d6a"
+}, {
+	"cuisine": ["breakfast & brunch", "asian fusion", "american (new)"],
+	"name": "Kitchen Story",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Castro"],
+		"geocoordinate": {
+			"lat": 37.7643545,
+			"lon": -122.4308676
+		},
+		"state": "CA",
+		"postal_code": "94114",
+		"address": ["3499 16th St"]
+	},
+	"cuisine_type": "Breakfast/Brunch",
+	"restaurantId": "66db"
+}, {
+	"cuisine": ["american (new)", "wine bars"],
+	"name": "20 Spot",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Mission"],
+		"geocoordinate": {
+			"lat": 37.7585063874722,
+			"lon": -122.420292198658
+		},
+		"state": "CA",
+		"postal_code": "94110",
+		"address": ["3565 20th St"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "25db"
+}, {
+	"cuisine": ["food delivery services", "juice bars & smoothies", "salad"],
+	"name": "Thistle",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Mission"],
+		"geocoordinate": {
+			"lat": 37.7485824,
+			"lon": -122.4184108
+		},
+		"state": "CA",
+		"postal_code": "94110",
+		"address": []
+	},
+	"cuisine_type": "Vegetarian/vegan",
+	"restaurantId": "ae85"
+}, {
+	"cuisine": ["seafood"],
+	"name": "Anchor Oyster Bar",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Castro"],
+		"geocoordinate": {
+			"lat": 37.759578536181,
+			"lon": -122.43472089181
+		},
+		"state": "CA",
+		"postal_code": "94114",
+		"address": ["579 Castro St"]
+	},
+	"cuisine_type": "Seafood",
+	"restaurantId": "ab6c"
+}, {
+	"cuisine": ["italian", "bars", "pizza"],
+	"name": "Beretta",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Mission"],
+		"geocoordinate": {
+			"lat": 37.753868,
+			"lon": -122.420636
+		},
+		"state": "CA",
+		"postal_code": "94110",
+		"address": ["1199 Valencia St"]
+	},
+	"cuisine_type": "Continental",
+	"restaurantId": "1002"
+}, {
+	"cuisine": ["italian"],
+	"name": "Lupa Trattoria",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Noe Valley"],
+		"geocoordinate": {
+			"lat": 37.751026,
+			"lon": -122.434524
+		},
+		"state": "CA",
+		"postal_code": "94114",
+		"address": ["4109 24th St"]
+	},
+	"cuisine_type": "Continental",
+	"restaurantId": "5671"
+}, {
+	"cuisine": ["spanish", "tapas bars"],
+	"name": "Contigo",
+	"price": 3,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Noe Valley"],
+		"geocoordinate": {
+			"lat": 37.7509002685547,
+			"lon": -122.434326171875
+		},
+		"state": "CA",
+		"postal_code": "94114",
+		"address": ["1320 Castro St"]
+	},
+	"cuisine_type": "Continental",
+	"restaurantId": "f3b8"
+}, {
+	"cuisine": ["french"],
+	"name": "Bisou Bistronomy",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Castro"],
+		"geocoordinate": {
+			"lat": 37.7629977,
+			"lon": -122.4342111
+		},
+		"state": "CA",
+		"postal_code": "94114",
+		"address": ["2367 Market St"]
+	},
+	"cuisine_type": "Continental",
+	"restaurantId": "e873"
+}, {
+	"cuisine": ["southern", "cajun/creole"],
+	"name": "The Front Porch",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Bernal Heights", "Mission"],
+		"geocoordinate": {
+			"lat": 37.7437210083008,
+			"lon": -122.421981811523
+		},
+		"state": "CA",
+		"postal_code": "94110",
+		"address": ["65 29th St"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "0f16"
+}, {
+	"cuisine": ["american (new)", "modern european"],
+	"name": "Hillside Supper Club",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Bernal Heights"],
+		"geocoordinate": {
+			"lat": 37.7465489819735,
+			"lon": -122.41361618042
+		},
+		"state": "CA",
+		"postal_code": "94110",
+		"address": ["300 Precita Ave"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "a659"
+}, {
+	"cuisine": ["seafood", "american (new)"],
+	"name": "Al's Place",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Mission"],
+		"geocoordinate": {
+			"lat": 37.7490078521491,
+			"lon": -122.42025397718
+		},
+		"state": "CA",
+		"postal_code": "94110",
+		"address": ["1499 Valencia st"]
+	},
+	"cuisine_type": "Seafood",
+	"restaurantId": "ff70"
+}, {
+	"cuisine": ["wine bars", "cafes"],
+	"name": "Noeteca",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Bernal Heights", "Mission"],
+		"geocoordinate": {
+			"lat": 37.744537,
+			"lon": -122.424072
+		},
+		"state": "CA",
+		"postal_code": "94110",
+		"address": ["1551 Dolores St"]
+	},
+	"cuisine_type": "Bars/Pubs",
+	"restaurantId": "8fa8"
+}, {
+	"cuisine": ["mexican"],
+	"name": "El Farolito",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Mission"],
+		"geocoordinate": {
+			"lat": 37.7527191995669,
+			"lon": -122.418355979025
+		},
+		"state": "CA",
+		"postal_code": "94110",
+		"address": ["2779 Mission St"]
+	},
+	"cuisine_type": "Latin American/Mexican",
+	"restaurantId": "8096"
+}, {
+	"cuisine": ["specialty food", "american (new)"],
+	"name": "Jake's Place",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Bayview-Hunters Point"],
+		"geocoordinate": {
+			"lat": 37.7431581,
+			"lon": -122.4047841
+		},
+		"state": "CA",
+		"postal_code": "94124",
+		"address": ["293 Bayshore Blvd"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "adbf"
+}, {
+	"cuisine": ["ethnic food", "seafood"],
+	"name": "Prubechu",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Mission"],
+		"geocoordinate": {
+			"lat": 37.7515228,
+			"lon": -122.4183644
+		},
+		"state": "CA",
+		"postal_code": "94110",
+		"address": ["2847 Mission St"]
+	},
+	"cuisine_type": "Seafood",
+	"restaurantId": "9308"
+}, {
+	"cuisine": ["american (new)"],
+	"name": "Blue Plate",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Bernal Heights", "Mission"],
+		"geocoordinate": {
+			"lat": 37.7452735900879,
+			"lon": -122.420433044434
+		},
+		"state": "CA",
+		"postal_code": "94110",
+		"address": ["3218 Mission St"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "c2bb"
+}, {
+	"cuisine": ["ramen"],
+	"name": "Coco's Ramen",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Bernal Heights"],
+		"geocoordinate": {
+			"lat": 37.743687,
+			"lon": -122.420692
+		},
+		"state": "CA",
+		"postal_code": "94110",
+		"address": ["3319 Mission St"]
+	},
+	"cuisine_type": "Asian",
+	"restaurantId": "b1be"
+}, {
+	"cuisine": ["american (new)", "mediterranean"],
+	"name": "Stem Kitchen & Garden",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Potrero Hill", "Mission Bay"],
+		"geocoordinate": {
+			"lat": 37.7659019909112,
+			"lon": -122.387905530632
+		},
+		"state": "CA",
+		"postal_code": "94158",
+		"address": ["499 Illinois St"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "3fbc"
+}, {
+	"cuisine": ["american (new)", "brasseries"],
+	"name": "Marlowe",
+	"price": 3,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["SoMa"],
+		"geocoordinate": {
+			"lat": 37.7783200510611,
+			"lon": -122.396771288052
+		},
+		"state": "CA",
+		"postal_code": "94107",
+		"address": ["500 Brannan St"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "856f"
+}, {
+	"cuisine": ["bars", "american (new)"],
+	"name": "Cockscomb",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["SoMa"],
+		"geocoordinate": {
+			"lat": 37.7787003088764,
+			"lon": -122.397242970765
+		},
+		"state": "CA",
+		"postal_code": "94107",
+		"address": ["564 4th St"]
+	},
+	"cuisine_type": "Bars/Pubs",
+	"restaurantId": "49dc"
+}, {
+	"cuisine": ["mexican", "burgers", "dive bars"],
+	"name": "Garaje",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["SoMa"],
+		"geocoordinate": {
+			"lat": 37.7816626955148,
+			"lon": -122.396104066043
+		},
+		"state": "CA",
+		"postal_code": "94107",
+		"address": ["475 3rd St"]
+	},
+	"cuisine_type": "Latin American/Mexican",
+	"restaurantId": "8ade"
+}, {
+	"cuisine": ["soul food"],
+	"name": "Little Skillet",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["SoMa"],
+		"geocoordinate": {
+			"lat": 37.778873,
+			"lon": -122.393918
+		},
+		"state": "CA",
+		"postal_code": "94107",
+		"address": ["360 Ritch St"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "7ff4"
+}, {
+	"cuisine": ["american (traditional)", "breakfast & brunch"],
+	"name": "Delancey Street Restaurant",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["SoMa", "South Beach"],
+		"geocoordinate": {
+			"lat": 37.783774022457,
+			"lon": -122.388639450073
+		},
+		"state": "CA",
+		"postal_code": "94107",
+		"address": ["600 The Embarcadero"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "1f6f"
+}, {
+	"cuisine": ["american (new)", "coffee & tea"],
+	"name": "Picnic on Third",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["SoMa"],
+		"geocoordinate": {
+			"lat": 37.7815361,
+			"lon": -122.3959045
+		},
+		"state": "CA",
+		"postal_code": "94107",
+		"address": ["493 3rd St"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "c0be"
+}, {
+	"cuisine": ["seafood", "food stands"],
+	"name": "Crazy Crab'z",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["SoMa", "South Beach"],
+		"geocoordinate": {
+			"lat": 37.778479444318,
+			"lon": -122.388157352176
+		},
+		"state": "CA",
+		"postal_code": "94107",
+		"address": ["AT&T Park", "24 Willie Mays Plz"]
+	},
+	"cuisine_type": "Seafood",
+	"restaurantId": "7221"
+}, {
+	"cuisine": ["french", "burgers", "creperies"],
+	"name": "Chez Maman",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Potrero Hill"],
+		"geocoordinate": {
+			"lat": 37.7624429,
+			"lon": -122.3967113
+		},
+		"state": "CA",
+		"postal_code": "94107",
+		"address": ["1401 18th St"]
+	},
+	"cuisine_type": "Continental",
+	"restaurantId": "f010"
+}, {
+	"cuisine": ["seafood", "american (new)", "bars"],
+	"name": "Mission Rock Resort",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Potrero Hill"],
+		"geocoordinate": {
+			"lat": 37.7653970834926,
+			"lon": -122.386461496353
+		},
+		"state": "CA",
+		"postal_code": "94158",
+		"address": ["817 Terry Francois Blvd"]
+	},
+	"cuisine_type": "Seafood",
+	"restaurantId": "3f7b"
+}, {
+	"cuisine": ["pubs", "american (new)", "cocktail bars"],
+	"name": "Woodbury",
+	"price": 3,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["SoMa", "South Beach"],
+		"geocoordinate": {
+			"lat": 37.7790943635989,
+			"lon": -122.392903892416
+		},
+		"state": "CA",
+		"postal_code": "94107",
+		"address": ["685 3rd St"]
+	},
+	"cuisine_type": "Bars/Pubs",
+	"restaurantId": "d86e"
+}, {
+	"cuisine": ["sandwiches", "breakfast & brunch", "american (traditional)"],
+	"name": "The American Grilled Cheese Kitchen",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["SoMa", "South Beach"],
+		"geocoordinate": {
+			"lat": 37.782485,
+			"lon": -122.392763
+		},
+		"state": "CA",
+		"postal_code": "94107",
+		"address": ["1 S Park St", "Apt 103A"]
+	},
+	"cuisine_type": "Deli/Sandwiches/Fast Food",
+	"restaurantId": "c0b6"
+}, {
+	"cuisine": ["latin american", "caribbean"],
+	"name": "Primo Patio Cafe",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["SoMa"],
+		"geocoordinate": {
+			"lat": 37.7786598,
+			"lon": -122.3932266
+		},
+		"state": "CA",
+		"postal_code": "94107",
+		"address": ["214 Townsend St"]
+	},
+	"cuisine_type": "Latin American/Mexican",
+	"restaurantId": "4497"
+}, {
+	"cuisine": ["french", "breakfast & brunch"],
+	"name": "The Butler & The Chef",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["SoMa"],
+		"geocoordinate": {
+			"lat": 37.780899,
+			"lon": -122.394218
+		},
+		"state": "CA",
+		"postal_code": "94107",
+		"address": ["155A S Park St"]
+	},
+	"cuisine_type": "Continental",
+	"restaurantId": "2f76"
+}, {
+	"cuisine": ["american (new)", "breakfast & brunch"],
+	"name": "Serpentine",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Dogpatch", "Potrero Hill"],
+		"geocoordinate": {
+			"lat": 37.758100271937,
+			"lon": -122.38818876502
+		},
+		"state": "CA",
+		"postal_code": "94107",
+		"address": ["2495 3rd St"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "b39d"
+}, {
+	"cuisine": ["asian fusion", "chinese"],
+	"name": "SO",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["SoMa"],
+		"geocoordinate": {
+			"lat": 37.7724113464355,
+			"lon": -122.407501220703
+		},
+		"state": "CA",
+		"postal_code": "94103",
+		"address": ["1010 Bryant St"]
+	},
+	"cuisine_type": "Asian",
+	"restaurantId": "63c0"
+}, {
+	"cuisine": ["ethiopian"],
+	"name": "Tadu Ethiopian Kitchen",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Tenderloin"],
+		"geocoordinate": {
+			"lat": 37.7848427346975,
+			"lon": -122.414135150413
+		},
+		"state": "CA",
+		"postal_code": "94102",
+		"address": ["484 Ellis St"]
+	},
+	"cuisine_type": "African",
+	"restaurantId": "84d0"
+}, {
+	"cuisine": ["american (new)"],
+	"name": "Citizen's Band",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["SoMa"],
+		"geocoordinate": {
+			"lat": 37.7751193195581,
+			"lon": -122.409969717264
+		},
+		"state": "CA",
+		"postal_code": "94103",
+		"address": ["1198 Folsom St"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "8e13"
+}, {
+	"cuisine": ["food trucks", "burgers"],
+	"name": "The Steamin' Burger",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["SoMa"],
+		"geocoordinate": {
+			"lat": 37.7726402,
+			"lon": -122.4099154
+		},
+		"state": "CA",
+		"postal_code": "94103",
+		"address": []
+	},
+	"cuisine_type": "Deli/Sandwiches/Fast Food",
+	"restaurantId": "1aed"
+}, {
+	"cuisine": ["burmese"],
+	"name": "Burma Love",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Mission"],
+		"geocoordinate": {
+			"lat": 37.769637554884,
+			"lon": -122.422283068299
+		},
+		"state": "CA",
+		"postal_code": "94103",
+		"address": ["211 Valencia St"]
+	},
+	"cuisine_type": "Asian",
+	"restaurantId": "9c7f"
+}, {
+	"cuisine": ["sushi bars", "japanese", "vegan"],
+	"name": "Shizen Vegan Sushi Bar & Izakaya",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Mission"],
+		"geocoordinate": {
+			"lat": 37.7682280540466,
+			"lon": -122.421650066972
+		},
+		"state": "CA",
+		"postal_code": "94103",
+		"address": ["370 14th St"]
+	},
+	"cuisine_type": "Asian",
+	"restaurantId": "82e2"
+}, {
+	"cuisine": ["lounges", "mexican"],
+	"name": "Azucar Lounge",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["SoMa"],
+		"geocoordinate": {
+			"lat": 37.77392,
+			"lon": -122.411618
+		},
+		"state": "CA",
+		"postal_code": "94103",
+		"address": ["299 9th St"]
+	},
+	"cuisine_type": "Bars/Pubs",
+	"restaurantId": "66e3"
+}, {
+	"cuisine": ["french", "burgers"],
+	"name": "Chez Maman West",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Hayes Valley"],
+		"geocoordinate": {
+			"lat": 37.7769302261974,
+			"lon": -122.423146543171
+		},
+		"state": "CA",
+		"postal_code": "94102",
+		"address": ["401 Gough St"]
+	},
+	"cuisine_type": "Continental",
+	"restaurantId": "1591"
+}, {
+	"cuisine": ["american (new)", "bars"],
+	"name": "Huxley",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Lower Nob Hill"],
+		"geocoordinate": {
+			"lat": 37.7863281041241,
+			"lon": -122.417232468724
+		},
+		"state": "CA",
+		"postal_code": "94109",
+		"address": ["846 Geary St"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "1c82"
+}, {
+	"cuisine": ["american (traditional)", "bars", "breakfast & brunch"],
+	"name": "Tommy's Joynt",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Fillmore", "Western Addition"],
+		"geocoordinate": {
+			"lat": 37.785495,
+			"lon": -122.421806
+		},
+		"state": "CA",
+		"postal_code": "94109",
+		"address": ["1101 Geary Blvd"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "2dee"
+}, {
+	"cuisine": ["american (new)", "breakfast & brunch"],
+	"name": "Straw",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Hayes Valley"],
+		"geocoordinate": {
+			"lat": 37.774056,
+			"lon": -122.424198
+		},
+		"state": "CA",
+		"postal_code": "94102",
+		"address": ["203 Octavia Blvd"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "2f67"
+}, {
+	"cuisine": ["american (new)"],
+	"name": "Street Restaurant",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Russian Hill"],
+		"geocoordinate": {
+			"lat": 37.7964401,
+			"lon": -122.4220352
+		},
+		"state": "CA",
+		"postal_code": "94109",
+		"address": ["2141 Polk St"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "7039"
+}, {
+	"cuisine": ["american (new)"],
+	"name": "1760",
+	"price": 3,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Nob Hill"],
+		"geocoordinate": {
+			"lat": 37.7931389,
+			"lon": -122.4211588
+		},
+		"state": "CA",
+		"postal_code": "94109",
+		"address": ["1760 Polk St"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "f60c"
+}, {
+	"cuisine": ["delis", "sandwiches"],
+	"name": "Bite",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Lower Nob Hill"],
+		"geocoordinate": {
+			"lat": 37.7884239641,
+			"lon": -122.415666133
+		},
+		"state": "CA",
+		"postal_code": "94104",
+		"address": ["912 Sutter St"]
+	},
+	"cuisine_type": "Deli/Sandwiches/Fast Food",
+	"restaurantId": "7754"
+}, {
+	"cuisine": ["american (new)"],
+	"name": "Nob Hill Grille",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Nob Hill", "Lower Nob Hill"],
+		"geocoordinate": {
+			"lat": 37.7898598,
+			"lon": -122.4174576
+		},
+		"state": "CA",
+		"postal_code": "94109",
+		"address": ["969 Hyde St"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "f0f9"
+}, {
+	"cuisine": ["french"],
+	"name": "Bouche",
+	"price": 3,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Union Square"],
+		"geocoordinate": {
+			"lat": 37.7902010565423,
+			"lon": -122.407361268997
+		},
+		"state": "CA",
+		"postal_code": "94108",
+		"address": ["603 Bush St"]
+	},
+	"cuisine_type": "Continental",
+	"restaurantId": "2faf"
+}, {
+	"cuisine": ["bars", "breakfast & brunch", "brasseries"],
+	"name": "398 Brasserie",
+	"price": 4,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Union Square"],
+		"geocoordinate": {
+			"lat": 37.7871658,
+			"lon": -122.409368215869
+		},
+		"state": "CA",
+		"postal_code": "94102",
+		"address": ["398 Geary St"]
+	},
+	"cuisine_type": "Bars/Pubs",
+	"restaurantId": "ce27"
+}, {
+	"cuisine": ["lounges", "american (new)"],
+	"name": "Burritt Room + Tavern",
+	"price": 3,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Union Square"],
+		"geocoordinate": {
+			"lat": 37.789849,
+			"lon": -122.407403
+		},
+		"state": "CA",
+		"postal_code": "94108",
+		"address": ["417 Stockton St", "2nd Flr"]
+	},
+	"cuisine_type": "Bars/Pubs",
+	"restaurantId": "2918"
+}, {
+	"cuisine": ["american (new)"],
+	"name": "Sauce",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Financial District"],
+		"geocoordinate": {
+			"lat": 37.7914696,
+			"lon": -122.4036636
+		},
+		"state": "CA",
+		"postal_code": "94104",
+		"address": ["56 Belden Pl"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "c4f9"
+}, {
+	"cuisine": ["italian", "beer, wine & spirits"],
+	"name": "Nob Hill Cafe",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Nob Hill"],
+		"geocoordinate": {
+			"lat": 37.793262,
+			"lon": -122.412628
+		},
+		"state": "CA",
+		"postal_code": "94108",
+		"address": ["1152 Taylor St"]
+	},
+	"cuisine_type": "Continental",
+	"restaurantId": "dde7"
+}, {
+	"cuisine": ["japanese", "sushi bars", "asian fusion"],
+	"name": "Sushirrito",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Financial District"],
+		"geocoordinate": {
+			"lat": 37.790345,
+			"lon": -122.403844
+		},
+		"state": "CA",
+		"postal_code": "94108",
+		"address": ["226 Kearny St"]
+	},
+	"cuisine_type": "Asian",
+	"restaurantId": "88b8"
+}, {
+	"cuisine": ["american (traditional)"],
+	"name": "Wayfare Tavern",
+	"price": 3,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Financial District"],
+		"geocoordinate": {
+			"lat": 37.7939484886016,
+			"lon": -122.402307987213
+		},
+		"state": "CA",
+		"postal_code": "94111",
+		"address": ["558 Sacramento St"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "0c2b"
+}, {
+	"cuisine": ["american (new)", "breakfast & brunch", "gastropubs"],
+	"name": "The Pink Elephant",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Financial District", "SoMa"],
+		"geocoordinate": {
+			"lat": 37.7867846,
+			"lon": -122.4004657
+		},
+		"state": "CA",
+		"postal_code": "94105",
+		"address": ["142 Minna St"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "c3b1"
+}, {
+	"cuisine": ["japanese"],
+	"name": "Muracci's Japanese Curry & Grill",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Financial District", "Chinatown"],
+		"geocoordinate": {
+			"lat": 37.7909228950739,
+			"lon": -122.404116466641
+		},
+		"state": "CA",
+		"postal_code": "94108",
+		"address": ["307 Kearny St"]
+	},
+	"cuisine_type": "Asian",
+	"restaurantId": "bbee"
+}, {
+	"cuisine": ["american (new)", "pizza", "wine bars"],
+	"name": "Archive Bar & Kitchen",
+	"price": 1,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Financial District", "SoMa"],
+		"geocoordinate": {
+			"lat": 37.7879306059177,
+			"lon": -122.400104533728
+		},
+		"state": "CA",
+		"postal_code": "94105",
+		"address": ["602 Mission St"]
+	},
+	"cuisine_type": "American",
+	"restaurantId": "187e"
+}, {
+	"cuisine": ["sandwiches"],
+	"name": "The Sentinel",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Financial District", "SoMa"],
+		"geocoordinate": {
+			"lat": 37.7882977785009,
+			"lon": -122.401372356986
+		},
+		"state": "CA",
+		"postal_code": "94105",
+		"address": ["37 New Montgomery St"]
+	},
+	"cuisine_type": "Deli/Sandwiches/Fast Food",
+	"restaurantId": "6176"
+}, {
+	"cuisine": ["sushi bars", "japanese"],
+	"name": "Akiko's Restaurant",
+	"price": 2,
+	"location": {
+		"city": "San Francisco",
+		"neighborhoods": ["Union Square", "Financial District"],
+		"geocoordinate": {
+			"lat": 37.7906405925751,
+			"lon": -122.404579147696
+		},
+		"state": "CA",
+		"postal_code": "94108",
+		"address": ["431 Bush St"]
+	},
+	"cuisine_type": "Asian",
+	"restaurantId": "9d62"
+}]

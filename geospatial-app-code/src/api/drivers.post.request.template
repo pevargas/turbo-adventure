@@ -1,0 +1,14 @@
+#set($inputRoot = $input.path('$'))
+{
+    "operation": "POST",
+    "driver": {
+        "driverId": "$inputRoot.driverId",
+        "car": {
+            "make": "$inputRoot.car.make",
+            "color": "$inputRoot.car.color"
+        },
+        "location": {
+            "coordinates": $inputRoot.location.coordinates
+        }
+    }
+}

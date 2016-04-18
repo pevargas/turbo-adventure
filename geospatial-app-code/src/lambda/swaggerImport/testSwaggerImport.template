@@ -1,0 +1,18 @@
+{
+	"AWSTemplateFormatVersion": "2010-09-09",
+	"Description": "Creates the lab environment for the geo-spatial recommendation engine bootcamp",
+	"Mappings": {},
+	"Conditions": {},
+	"Parameters": {},
+	"Resources": {
+		"SwaggerImport": {
+			"Type": "Custom::SwaggerImport",
+			"Properties": {
+				"ServiceToken": "arn:aws:lambda:us-east-1:127436723527:function:SwaggerImport",
+				"Bucket": "aws-slatern-qwiklab",
+				"JarKey": "static/aws-apigateway-importer-1.0.3-SNAPSHOT-jar-with-dependencies.jar"
+			}
+		}
+	},
+	"Outputs": {}
+}

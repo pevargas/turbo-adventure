@@ -1,0 +1,18 @@
+{
+  "cliProfile": "bootcamp",
+  "region": "eu-west-1",
+  "accountId": "<YOUR_ACCOUNT_ID>",
+  "cloudformation": {
+    "stackName": "geospatial-rec-engine"
+  },
+  "es": {
+    "domainName": "geospatial-rec-engine"
+  },
+  "api": {
+    "jarKey": "api/aws-apigateway-importer-1.0.3-SNAPSHOT-jar-with-dependencies.jar",
+    "swaggerKey": "api/restaurantDeliveryApi.swagger.json"
+  },
+  "lambda": {
+    "bucket": "<YOUR_BOOTCAMP_BUCKET>"
+  }
+}

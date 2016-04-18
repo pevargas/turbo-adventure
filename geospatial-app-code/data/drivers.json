@@ -1,0 +1,226 @@
+[{
+	"driverId": "5daf",
+	"location": {
+		"coordinates": []
+	},
+	"car": {
+		"color": "burgundy",
+		"make": "Audi"
+	}
+}, {
+	"driverId": "cf25",
+	"location": {
+		"coordinates": []
+	},
+	"car": {
+		"color": "white",
+		"make": "Toyota"
+	}
+}, {
+	"driverId": "2ebf",
+	"location": {
+		"coordinates": []
+	},
+	"car": {
+		"color": "black",
+		"make": "GMC"
+	}
+}, {
+	"driverId": "ea79",
+	"location": {
+		"coordinates": []
+	},
+	"car": {
+		"color": "black",
+		"make": "Toyota"
+	}
+}, {
+	"driverId": "15bb",
+	"location": {
+		"coordinates": []
+	},
+	"car": {
+		"color": "burgundy",
+		"make": "Buick"
+	}
+}, {
+	"driverId": "71db",
+	"location": {
+		"coordinates": []
+	},
+	"car": {
+		"color": "black",
+		"make": "Mercedes"
+	}
+}, {
+	"driverId": "3fb9",
+	"location": {
+		"coordinates": []
+	},
+	"car": {
+		"color": "white",
+		"make": "Buick"
+	}
+}, {
+	"driverId": "bb2d",
+	"location": {
+		"coordinates": []
+	},
+	"car": {
+		"color": "grey",
+		"make": "Chevrolet"
+	}
+}, {
+	"driverId": "212d",
+	"location": {
+		"coordinates": []
+	},
+	"car": {
+		"color": "white",
+		"make": "Buick"
+	}
+}, {
+	"driverId": "90e2",
+	"location": {
+		"coordinates": []
+	},
+	"car": {
+		"color": "white",
+		"make": "Audi"
+	}
+}, {
+	"driverId": "a708",
+	"location": {
+		"coordinates": []
+	},
+	"car": {
+		"color": "blue",
+		"make": "Lexus"
+	}
+}, {
+	"driverId": "948b",
+	"location": {
+		"coordinates": []
+	},
+	"car": {
+		"color": "blue",
+		"make": "Lexus"
+	}
+}, {
+	"driverId": "b54a",
+	"location": {
+		"coordinates": []
+	},
+	"car": {
+		"color": "red",
+		"make": "BMW"
+	}
+}, {
+	"driverId": "82b7",
+	"location": {
+		"coordinates": []
+	},
+	"car": {
+		"color": "black",
+		"make": "Mercedes"
+	}
+}, {
+	"driverId": "2c19",
+	"location": {
+		"coordinates": []
+	},
+	"car": {
+		"color": "burgundy",
+		"make": "Lexus"
+	}
+}, {
+	"driverId": "b12b",
+	"location": {
+		"coordinates": []
+	},
+	"car": {
+		"color": "grey",
+		"make": "Lexus"
+	}
+}, {
+	"driverId": "69ab",
+	"location": {
+		"coordinates": []
+	},
+	"car": {
+		"color": "burgundy",
+		"make": "BMW"
+	}
+}, {
+	"driverId": "8031",
+	"location": {
+		"coordinates": []
+	},
+	"car": {
+		"color": "grey",
+		"make": "Buick"
+	}
+}, {
+	"driverId": "b9d5",
+	"location": {
+		"coordinates": []
+	},
+	"car": {
+		"color": "red",
+		"make": "GMC"
+	}
+}, {
+	"driverId": "376e",
+	"location": {
+		"coordinates": []
+	},
+	"car": {
+		"color": "tan",
+		"make": "GMC"
+	}
+}, {
+	"driverId": "79a7",
+	"location": {
+		"coordinates": []
+	},
+	"car": {
+		"color": "black",
+		"make": "Toyota"
+	}
+}, {
+	"driverId": "b743",
+	"location": {
+		"coordinates": []
+	},
+	"car": {
+		"color": "black",
+		"make": "Ford"
+	}
+}, {
+	"driverId": "e4ed",
+	"location": {
+		"coordinates": []
+	},
+	"car": {
+		"color": "black",
+		"make": "GMC"
+	}
+}, {
+	"driverId": "5d8f",
+	"location": {
+		"coordinates": []
+	},
+	"car": {
+		"color": "burgundy",
+		"make": "BMW"
+	}
+}, {
+	"driverId": "1061",
+	"location": {
+		"coordinates": []
+	},
+	"car": {
+		"color": "blue",
+		"make": "Mercedes"
+	}
+}]

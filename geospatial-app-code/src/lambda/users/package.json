@@ -1,0 +1,16 @@
+{
+  "name": "users",
+  "version": "0.1.0",
+  "description": "Lambda functions for users REST API",
+  "main": "users.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "dependencies": {},
+  "keywords": [
+    "aws",
+    "bootcamp"
+  ],
+  "author": "slatern@amazon.com",
+  "license": "ISC"
+}

@@ -1,0 +1,17 @@
+{
+  "DataSourceBucket": "geospatial-rec-engine-datasourcebucket-qjwfdwzqpx0k",
+  "WebsiteBucket": "geospatial-rec-engine-websitebucket-uov012tq5e2z",
+  "RestaurantLambdaArn": "arn:aws:lambda:eu-west-1:127436723527:function:geospatial-rec-engine-RestaurantLambda-CH232OFFJGMM",
+  "RestaurantStreamLambdaArn": "arn:aws:lambda:eu-west-1:127436723527:function:geospatial-rec-engine-RestaurantStreamLambda-1DTLOIB2VRE77",
+  "RestaurantSearchLambdaArn": "arn:aws:lambda:eu-west-1:127436723527:function:geospatial-rec-engine-RestaurantSearchLambda-8ICJBDP0KVFY",
+  "PredictionLambdaArn": "arn:aws:lambda:eu-west-1:127436723527:function:geospatial-rec-engine-PredictionLambda-10PEWYHVQJ682",
+  "DriverLambdaArn": "arn:aws:lambda:eu-west-1:127436723527:function:geospatial-rec-engine-DriverLambda-5UHZJKGK44FM",
+  "DriverStreamLambdaArn": "arn:aws:lambda:eu-west-1:127436723527:function:geospatial-rec-engine-DriverStreamLambda-Y6A8GP6OD32Y",
+  "DriverSearchLambdaArn": "arn:aws:lambda:eu-west-1:127436723527:function:geospatial-rec-engine-DriverSearchLambda-EMPNN22GX4PK",
+  "UserProfileLambdaArn": "arn:aws:lambda:eu-west-1:127436723527:function:geospatial-rec-engine-UserProfileLambda-SFTG861II922",
+  "ConfigLambdaArn": "arn:aws:lambda:eu-west-1:127436723527:function:geospatial-rec-engine-ConfigLambda-X6FFV3P761FW",
+  "UpdateMappingLambdaArn": "arn:aws:lambda:eu-west-1:127436723527:function:geospatial-rec-engine-UpdateMappingLambda-TADFRO02MN3D",
+  "EnableStreamLambdaArn": "arn:aws:lambda:eu-west-1:127436723527:function:geospatial-rec-engine-EnableStreamLambda-15XXXSR7F0TK7",
+  "SwaggerImportLambdaArn": "arn:aws:lambda:eu-west-1:127436723527:function:geospatial-rec-engine-SwaggerImportLambda-3B7VPHPWIZQC",
+  "ApplicationExecutionRoleArn": "arn:aws:iam::127436723527:role/geospatial-rec-engine/geospatial-rec-engine-ApplicationExecutionRole-GAIVFC96PCUK"
+}

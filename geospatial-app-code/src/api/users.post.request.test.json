@@ -1,0 +1,13 @@
+{
+  "email": "test-user@test.com",
+  "gender": 0,
+  "age": 2,
+  "budgetPreference": 2,
+  "deliveryAddress": {
+    "address_1": "475 Sansome Street",
+    "address_2": "21st Floor",
+    "city": "San Francisco",
+    "state": "CA",
+    "zip": "94133"
+  }
+}

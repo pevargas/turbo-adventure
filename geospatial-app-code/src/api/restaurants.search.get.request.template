@@ -1,0 +1,4 @@
+{
+	"searchTerms":"$input.params('searchTerms')",
+	"locations": "$input.params('locations')"
+}

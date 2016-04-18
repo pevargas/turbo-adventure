@@ -1,0 +1,19 @@
+{
+  "name": "drivers",
+  "version": "0.1.0",
+  "description": "Loads the drivers into DynamoDB",
+  "main": "drivers.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "dependencies": {
+      "async": "1.4.2",
+      "aws-sdk": "2.2.12"
+  },
+  "keywords": [
+    "aws",
+    "bootcamp"
+  ],
+  "author": "slatern@amazon.com",
+  "license": "ISC"
+}

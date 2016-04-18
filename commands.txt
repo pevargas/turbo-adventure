@@ -1,0 +1,239 @@
+/**download all the scripts from S3**/
+aws s3 cp --recursive s3://us-east-1-aws-training/bootcamp/georec-engine/lab-1/static <artifacts_path>
+
+/**download the website souce code and install the dependencies**/
+/**<artifacts_path> is the path of your choosing where you downloaded all the lab artifacts**/
+aws s3 cp s3://us-east-1-aws-training/bootcamp/georec-engine/lab-1/nov/web.zip <artifacts_path>
+cd <artifacts_path>
+unzip web.zip
+cd web
+npm install
+bower install
+
+
+/**sample event for saveUserProfile lambda function in Part One:**/
+{
+	"method": "POST",
+	"user": {
+		"email": "test-user@test.com",
+		"gender": 0,
+		"age": 2,
+		"budgetPreference": 2,
+		"deliveryAddress": {
+			"address_1": "475 Sansome Street",
+			"address_2": "21st Floor",
+			"city": "San Francisco",
+			"state": "CA",
+			"zip": "94133"
+		}
+	}
+}
+
+/**mapping template for /user POST operation in API Gateway creation in Part One:**/
+
+#set($inputRoot = $input.path('$'))
+{
+    "method": "POST",
+    "user": {
+        "email": "$inputRoot.email",
+        "budgetPreference": "$inputRoot.budgetPreference",
+        "gender": "$inputRoot.gender",
+        "age": "$inputRoot.age",
+        "deliveryAddress": {
+            "address_1": "$inputRoot.deliveryAddress.address_1",
+            "address_2": "$inputRoot.deliveryAddress.address_2",
+            "city": "$inputRoot.deliveryAddress.city",
+            "state": "$inputRoot.deliveryAddress.state",
+            "zip": "$inputRoot.deliveryAddress.zip"
+        }
+    }
+}
+
+/**Request body for /user POST method testing**/
+{
+	"email": "test-user@test.com",
+	"gender": 0,
+	"age": 2,
+	"budgetPreference": 2,
+	"deliveryAddress": {
+		"address_1": "475 Sansome Street",
+		"address_2": "21st Floor",
+		"city": "San Francisco",
+		"state": "CA",
+		"zip": "94133"
+		}
+}
+
+/**build the Swagger import tool using Apache maven
+git clone https://github.com/awslabs/aws-apigateway-swagger-importer
+cd aws-apigateway-swagger-importer
+mvn assembly:assembly
+
+/**Check the version of Java you are running**/
+java -version
+
+/**Set JAVA_HOME on OS X after installing Java 8 from Oracle's site**/
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home
+
+/**import the swagger JSON file into API Gateway**/
+/**execute this from the directory in which you built the Swagger import tool**/
+
+./aws-api-import.sh --create <artifacts_path>/restaurant.swagger.json
+
+cd <artifcacts_path>
+npm install
+node load_restaurants.js
+node load_drivers.js
+
+/**integration request mapping template for /restaurant/search
+{
+	"searchTerms":"$input.params('searchTerms')",
+	"locations": "$input.params('locations')"
+}
+
+/**integration response mapping template for /restaurant/search
+#set($inputRoot = $input.path('$'))
+{
+  "type": "FeatureCollection",
+  "features":[
+    #foreach($elem in $inputRoot.restaurants)
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": ["$elem.location.geocoordinate.lon", "$elem.location.geocoordinate.lat"]
+            },
+            "properties": {
+                "title": "$elem.name",
+                "description": "$elem.cuisine_type",
+                "marker-color": "#FDCA00",
+                "marker-size": "medium",
+                "marker-symbol": "restaurant",
+                "price": "$elem.price",
+                "restaurantId": "$elem.restaurantId"
+            }
+        }
+        #if($foreach.hasNext),#end
+    #end
+  ]
+}
+
+/**query ElasticSearch for the index for a given restaurant**/
+curl bootcamp:geospatial@your-ec2-public-ip.compute-1.amazonaws.com/location/restaurant/f5b5
+
+/**Driver POST request input template**/
+#set($inputRoot = $input.path('$'))
+{
+    "operation": "addDriver",
+    "driver": {
+        "driverId": "$inputRoot.driverId",
+        "car": {
+            "make": "$inputRoot.car.make",
+            "color": "$inputRoot.car.color"
+        },
+        "location": {
+            "coordinates": $inputRoot.location.coordinates
+        }
+    }
+}
+
+#set($inputRoot = $input.path('$'))
+{
+  "type": "FeatureCollection",
+  "features":[
+    #foreach($elem in $inputRoot.drivers)
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": "[$elem.location.coordinates[0],$elem.location.coordinates[1]]"
+            },
+            "properties": {
+                "driverId": "$elem.driverId",
+                "title": "$elem.car.color $elem.car.make",
+                "description": "$elem.car.color $elem.car.make",
+                "marker-color": "#FDCA00",
+                "marker-size": "medium",
+                "marker-symbol": "driver"
+            }
+        }
+        #if($foreach.hasNext),#end
+    #end
+  ]
+}
+
+/**download the website souce code and install the dependencies**/
+/**<artifacts_path> is the path of your choosing where you downloaded all the lab artifacts**/
+aws s3 cp s3://us-east-1-aws-training/bootcamp/georec-engine/lab-1/nov/web.zip <artifacts_path>
+cd <artifacts_path>
+unzip web.zip
+cd web
+npm install
+bower install
+
+aws s3 cp <artifacts_path>/restaurants.data s3://[BUCKET_NAME]/data/restaurants.data
+
+/**This is the item that needs to be put into the config table to enable ML predictions**/
+{
+  "setting": "ml",
+  "modelId": "[YOUR ML Model ID]",
+  "endpoint": "[YOUR PREDICTION ENDPOINT]"
+}
+
+/**This is the mapping between the enum values stored in DynamoDB and the enum labels found in the machine learning data set and in the UI**/
+{
+    "age_enum": [
+        {
+            "label": "under_19",
+            "value": 0
+        },
+        {
+            "label": "20_34",
+            "value": 1
+        },
+        {
+            "label": "35_49",
+            "value": 2
+        },
+        {
+            "label": "50_64",
+            "value": 3
+        },
+        {
+            "label": "65_and_over",
+            "value": 4
+        }
+    ],
+    "budget_and_price_enum": [
+        {
+            "label": "no_preference",
+            "value": 0
+        },
+        {
+            "label": "under_20",
+            "value": 1
+        },
+        {
+            "label": "20_30",
+            "value": 2
+        },
+        {
+            "label": "30_50",
+            "value": 3
+        },
+        {
+            "label": "over_50",
+            "value": 4
+        }
+    ],
+    "gender": [
+        {
+            "label": "male",
+            "value": 0
+        },
+        {
+            "label": "female",
+            "value": 1
+        }
+    ]
+}

@@ -1,0 +1,287 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title>AWS Geospatial 3 Recommendation Engine Bootcamp</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <!-- Mapbox includes -->
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
+  <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet'/>
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <!-- build:css(.) styles/vendor.css -->
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="/bower_components/components-font-awesome/css/font-awesome.css" />
+  <!-- endbuild -->
+
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+
+</head>
+<body>
+  <!--[if lt IE 10]>
+  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+  <div class="topbar">
+    <div class="aws-logo top">
+      <a href="#" target="_blank">
+        <svg version="1.1" id="AWSlogo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 94 34" xml:space="preserve">
+          <g>
+            <polygon fill="#FAAF34" points="26.5,13 21.7,11.4 21.7,4.5 26.5,6   "></polygon>
+            <polyline fill="#FAAF34" points="27.7,6 32.5,4.5 32.5,11.4 27.7,13 27.7,6   "></polyline>
+            <polyline fill="#FAAF34" points="31.5,3.8 27.1,2.4 22.7,3.8 27.1,5 31.5,3.8     "></polyline>
+            <polygon fill="#FAAF34" points="38.5,13 33.7,11.4 33.7,4.5 38.5,6   "></polygon>
+            <polyline fill="#FAAF34" points="39.7,6 44.5,4.5 44.5,11.4 39.7,13 39.7,6   "></polyline>
+            <polyline fill="#FAAF34" points="43.5,3.8 39.1,2.4 34.7,3.8 39.1,5 43.5,3.8     "></polyline>
+            <polygon fill="#FAAF34" points="8.5,16 3.7,14.6 3.7,21.5 8.4,23.1   "></polygon>
+            <polyline fill="#FAAF34" points="9.7,16 14.5,14.6 14.4,21.5 9.7,23.1 9.7,16     "></polyline>
+            <polyline fill="#FAAF34" points="13.5,13.9 9,12.5 4.7,13.9 9,15.1 13.5,13.9     "></polyline>
+            <polygon fill="#FAAF34" points="20.5,23.1 15.7,21.5 15.7,14.6 20.5,16   "></polygon>
+            <polyline fill="#FAAF34" points="21.7,16 26.5,14.6 26.5,21.5 21.7,23.1 21.7,16  "></polyline>
+            <polyline fill="#FAAF34" points="25.5,13.9 21.1,12.5 16.7,13.9 21.1,15.1 25.5,13.9  "></polyline>
+            <polygon fill="#FAAF34" points="14.5,33.2 9.7,31.6 9.7,24.7 14.5,26.1   "></polygon>
+            <polyline fill="#FAAF34" points="15.7,26.1 20.5,24.7 20.5,31.6 15.7,33.2 15.7,26.1  "></polyline>
+            <polyline fill="#FAAF34" points="19.5,23.9 15,22.6 10.7,23.9 15.1,25.1 19.5,23.9    "></polyline>
+          </g>
+          <g>
+            <circle fill="#FFFFFF" cx="68.9" cy="25.6" r="0.7"></circle>
+            <path fill="#FFFFFF" d="M35.6,27.1l-0.4,0c-0.1,0-0.3,0.1-0.3,0.2l-1.1,3.7l-1.1-3.7c0-0.1-0.1-0.2-0.3-0.2h-0.4
+            c-0.1,0-0.3,0.1-0.3,0.2l-1,3.7l-1-3.7c0-0.1-0.2-0.2-0.3-0.2l-0.5,0c-0.1,0-0.2,0-0.3,0.1c0,0,0,0.1,0,0.2l1.6,5.5
+            c0,0.1,0.1,0.2,0.3,0.2H31c0.1,0,0.3-0.1,0.3-0.2l1-3.7l1,3.7c0,0.1,0.1,0.2,0.3,0.2h0.5c0.1,0,0.3-0.1,0.3-0.2l1.5-5.5
+            c0-0.1,0-0.1,0-0.2C35.8,27.1,35.7,27.1,35.6,27.1z"></path>
+            <path fill="#FFFFFF" d="M38.6,27c-1.8,0-2.6,1.6-2.6,3.1c0,1.8,1,3,2.6,3c1.1,0,2-0.6,2.3-1.6c0-0.1,0-0.1,0-0.2
+            c0-0.1-0.1-0.1-0.2-0.1l-0.5-0.1c-0.1,0-0.3,0.1-0.3,0.2c-0.2,0.6-0.7,0.9-1.2,0.9c-0.5,0-1-0.3-1.2-0.8c-0.2-0.4-0.2-0.8-0.2-1.2
+            l3.6,0c0.1,0,0.2,0,0.2-0.1c0,0,0.1-0.1,0.1-0.2C41.1,28.6,40.4,27,38.6,27z M39.9,29.4h-2.7c0.1-0.7,0.5-1.5,1.4-1.5
+            C39.5,27.9,39.9,28.7,39.9,29.4z"></path>
+            <path fill="#FFFFFF" d="M44.4,27L44.4,27c-0.7,0-1.2,0.2-1.5,0.8l0-2.3c0-0.1-0.1-0.3-0.3-0.3h-0.5c-0.1,0-0.3,0.1-0.3,0.3v7.3
+            c0,0.1,0.1,0.3,0.3,0.3l0.2,0c0.1,0,0.2-0.1,0.3-0.2l0.2-0.5c0.4,0.5,0.9,0.8,1.5,0.8h0.1c1.6,0,2.3-1.6,2.3-3.1
+            c0-0.8-0.2-1.5-0.5-2C45.8,27.4,45.1,27,44.4,27z M45.5,30.1c0,0.3-0.1,2-1.3,2.1c-0.4,0-0.8-0.3-1-0.6c-0.2-0.3-0.3-0.6-0.3-1.1
+            v-1c0-0.8,0.6-1.6,1.3-1.6C45.4,27.9,45.5,29.7,45.5,30.1z"></path>
+            <path fill="#FFFFFF" d="M52.3,29.9c-0.3-0.2-0.7-0.3-1.1-0.4l-0.8-0.1c-0.6-0.1-0.9-0.2-0.9-0.7c0-0.5,0.5-0.7,1-0.7
+            c0.6,0,1,0.3,1.2,0.7c0,0.1,0.2,0.2,0.3,0.2c0,0,0,0,0.1,0l0.5-0.1c0.1,0,0.2-0.1,0.2-0.1c0-0.1,0-0.1,0-0.2
+            c-0.3-0.9-1-1.3-2.2-1.3c-1,0-2.1,0.5-2.1,1.7c0,0.9,0.5,1.4,1.6,1.6l0.9,0.2c0.5,0.1,1,0.3,1,0.8c0,0.8-0.9,0.8-1.1,0.8
+            c-0.6,0-1.3-0.3-1.4-0.8c0-0.1-0.2-0.2-0.3-0.2l-0.5,0.1c-0.1,0-0.1,0.1-0.2,0.1c0,0.1,0,0.1,0,0.2c0.3,0.9,1.2,1.5,2.4,1.5h0
+            c1.1,0,2.3-0.5,2.3-1.8C53,30.7,52.7,30.2,52.3,29.9z"></path>
+            <path fill="#FFFFFF" d="M56.2,27c-1.8,0-2.6,1.6-2.6,3.1c0,1.8,1,3,2.6,3c1.1,0,2-0.6,2.3-1.6c0-0.1,0-0.1,0-0.2
+            c0-0.1-0.1-0.1-0.2-0.1l-0.5-0.1c-0.1,0-0.3,0-0.3,0.2c-0.2,0.6-0.7,0.9-1.2,0.9c-0.5,0-1-0.3-1.2-0.8c-0.2-0.4-0.2-0.8-0.2-1.2
+            l3.6,0c0.1,0,0.2,0,0.2-0.1c0,0,0.1-0.1,0.1-0.2C58.6,28.6,58,27,56.2,27z M57.4,29.4h-2.6c0.1-0.7,0.5-1.5,1.4-1.5
+            C57,27.9,57.4,28.7,57.4,29.4z"></path>
+            <path fill="#FFFFFF" d="M62,27.1c-0.1,0-0.1,0-0.2,0c-0.6,0-1.1,0.3-1.4,1l0-0.5c0-0.1-0.1-0.3-0.3-0.3h-0.4
+            c-0.1,0-0.3,0.1-0.3,0.3v5.3c0,0.1,0.1,0.3,0.3,0.3h0.5c0.1,0,0.3-0.1,0.3-0.3l0-2.7c0-0.4,0-0.8,0.3-1.2c0.3-0.6,0.7-0.8,1.3-0.8
+            c0.1,0,0.3-0.1,0.3-0.3v-0.5C62.3,27.2,62.2,27.1,62,27.1z"></path>
+            <path fill="#FFFFFF" d="M67.5,27l-0.4,0c-0.1,0-0.3,0.1-0.3,0.2l-1.3,4.2l-1.4-4.2c0-0.1-0.2-0.2-0.3-0.2l-0.6,0
+            c-0.1,0-0.2,0-0.3,0.1c0,0.1,0,0.1,0,0.2l1.9,5.6c0,0.1,0.1,0.2,0.3,0.2h0.7c0.1,0,0.2-0.1,0.3-0.2l1.8-5.6c0-0.1,0-0.1,0-0.2
+            C67.7,27.1,67.6,27,67.5,27z"></path>
+            <path fill="#FFFFFF" d="M69.2,27l-0.6,0c-0.2,0-0.3,0.1-0.3,0.3l0,5.7c0,0.1,0,0.1,0.1,0.2c0.1,0,0.1,0.1,0.2,0.1l0.6,0l0,0
+            c0.2,0,0.3-0.1,0.3-0.3v-5.7C69.5,27.1,69.3,27,69.2,27z"></path>
+            <path fill="#FFFFFF" d="M74.5,30.8l-0.5,0c-0.1,0-0.2,0.1-0.3,0.2c-0.2,0.7-0.6,1.1-1.2,1.2c-1.2,0-1.2-1.6-1.2-2.1
+            c0-1,0.3-2,1.3-2.1c0.6,0,1,0.4,1.1,1.1c0,0.1,0.1,0.2,0.3,0.3l0.5,0c0.2,0,0.3-0.1,0.3-0.3c-0.2-1.2-1-2-2.1-2l0,0l0,0
+            c-1.6,0-2.4,1.5-2.4,3c0,1.4,0.6,3,2.4,3h0.1c1.1,0,1.9-0.8,2.2-2c0-0.1,0-0.1-0.1-0.2C74.7,30.9,74.6,30.8,74.5,30.8z"></path>
+            <path fill="#FFFFFF" d="M77.9,27c-1.8,0-2.6,1.6-2.6,3.1c0,1.8,1,3,2.6,3c1.1,0,2-0.6,2.3-1.6c0-0.1,0-0.1,0-0.2
+            c0-0.1-0.1-0.1-0.2-0.1l-0.5-0.1c-0.1,0-0.3,0-0.3,0.2c-0.2,0.6-0.7,0.9-1.2,0.9c-0.5,0-1-0.3-1.2-0.8c-0.2-0.4-0.2-0.8-0.2-1.2
+            h3.6c0.1,0,0.2,0,0.2-0.1c0,0,0.1-0.1,0.1-0.2C80.3,28.6,79.7,27,77.9,27z M79.2,29.4h-2.7c0.1-0.7,0.5-1.5,1.4-1.5
+            C78.7,27.9,79.1,28.7,79.2,29.4z"></path>
+            <path fill="#FFFFFF" d="M84.8,29.9c-0.3-0.2-0.7-0.3-1.1-0.4l-0.8-0.1c-0.6-0.1-0.9-0.2-0.9-0.7c0-0.7,0.8-0.7,1-0.7
+            c0.6,0,1,0.3,1.2,0.7c0,0.1,0.2,0.2,0.3,0.2c0,0,0,0,0.1,0l0.5-0.1c0.1,0,0.2-0.1,0.2-0.1c0-0.1,0-0.1,0-0.2
+            c-0.3-0.9-1.1-1.3-2.2-1.3c-1,0-2.1,0.5-2.1,1.7c0,0.9,0.5,1.4,1.6,1.6l0.9,0.2c0.5,0.1,1,0.3,1,0.8c0,0.8-0.9,0.8-1.1,0.8
+            c-0.6,0-1.3-0.2-1.4-0.8c0-0.1-0.2-0.2-0.3-0.2L81,31.3c-0.1,0-0.1,0.1-0.2,0.1c0,0.1,0,0.1,0,0.2c0.3,0.9,1.2,1.5,2.4,1.5h0
+            c1.1,0,2.3-0.5,2.3-1.8C85.5,30.7,85.3,30.2,84.8,29.9z"></path>
+          </g>
+          <g>
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M61.8,16.1v-1.3c0-0.2,0.1-0.3,0.3-0.3l5.8,0
+            c0.2,0,0.3,0.1,0.3,0.3v1.1c0,0.2-0.2,0.4-0.4,0.8l-3,4.3c1.1,0,2.3,0.1,3.3,0.7c0.2,0.1,0.3,0.3,0.3,0.5v1.4
+            c0,0.2-0.2,0.4-0.4,0.3c-1.8-0.9-4.1-1-6.1,0c-0.2,0.1-0.4-0.1-0.4-0.3v-1.3c0-0.2,0-0.6,0.2-0.9l3.5-5l-3,0
+            C61.9,16.4,61.8,16.3,61.8,16.1"></path>
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M40.7,24.1H39c-0.2,0-0.3-0.1-0.3-0.3l0-9c0-0.2,0.2-0.3,0.3-0.3
+            l1.6,0c0.2,0,0.3,0.1,0.3,0.3V16h0c0.4-1.1,1.2-1.7,2.3-1.7c1.1,0,1.8,0.5,2.3,1.7c0.4-1.1,1.4-1.7,2.4-1.7c0.7,0,1.5,0.3,2,1
+            c0.6,0.8,0.4,1.9,0.4,2.8l0,5.7c0,0.2-0.2,0.3-0.3,0.3h-1.8c-0.2,0-0.3-0.2-0.3-0.3V19c0-0.4,0-1.3,0-1.7c-0.1-0.6-0.5-0.8-1-0.8
+            c-0.4,0-0.9,0.3-1,0.7c-0.2,0.5-0.2,1.2-0.2,1.7v4.8c0,0.2-0.2,0.3-0.3,0.3h-1.8c-0.2,0-0.3-0.2-0.3-0.3l0-4.8c0-1,0.2-2.5-1.1-2.5
+            c-1.3,0-1.2,1.4-1.2,2.5l0,4.8C41.1,24,40.9,24.1,40.7,24.1"></path>
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M73.1,14.3c2.6,0,4,2.2,4,5.1c0,2.7-1.6,4.9-4,4.9
+            c-2.6,0-3.9-2.2-3.9-5C69.2,16.5,70.6,14.3,73.1,14.3 M73.2,16.1c-1.3,0-1.4,1.8-1.4,2.9c0,1.1,0,3.4,1.4,3.4c1.4,0,1.4-1.9,1.4-3
+            c0-0.8,0-1.7-0.3-2.4C74.1,16.4,73.7,16.1,73.2,16.1z"></path>
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M80.5,24.1h-1.7c-0.2,0-0.3-0.2-0.3-0.3l0-9
+            c0-0.2,0.2-0.3,0.3-0.3l1.6,0c0.2,0,0.3,0.1,0.3,0.3v1.4h0c0.5-1.2,1.2-1.8,2.4-1.8c0.8,0,1.6,0.3,2,1.1c0.5,0.7,0.5,1.9,0.5,2.8
+            v5.7c0,0.2-0.2,0.3-0.3,0.3h-1.8c-0.2,0-0.3-0.1-0.3-0.3v-4.9c0-1,0.1-2.4-1.1-2.4c-0.4,0-0.8,0.3-1,0.7c-0.2,0.5-0.3,1.1-0.3,1.7
+            v4.8C80.9,24,80.7,24.1,80.5,24.1"></path>
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M57.2,19.8c0,0.7,0,1.3-0.3,1.9c-0.3,0.5-0.7,0.8-1.2,0.8
+            c-0.7,0-1.1-0.5-1.1-1.3c0-1.5,1.3-1.8,2.6-1.8V19.8 M58.9,24.1c-0.1,0.1-0.3,0.1-0.4,0c-0.6-0.5-0.7-0.7-1-1.2
+            c-1,1-1.6,1.3-2.9,1.3c-1.5,0-2.6-0.9-2.6-2.7c0-1.4,0.8-2.4,1.9-2.9c1-0.4,2.3-0.5,3.3-0.6v-0.2c0-0.4,0-0.9-0.2-1.3
+            c-0.2-0.3-0.6-0.5-1-0.5c-0.7,0-1.3,0.3-1.4,1.1c0,0.2-0.1,0.3-0.3,0.3l-1.7-0.2c-0.1,0-0.3-0.1-0.3-0.4c0.4-2.1,2.3-2.7,3.9-2.7
+            c0.9,0,2,0.2,2.6,0.9c0.9,0.8,0.8,1.9,0.8,3v2.7c0,0.8,0.3,1.2,0.7,1.6c0.1,0.2,0.1,0.3,0,0.5C59.9,23.2,59.3,23.8,58.9,24.1
+            L58.9,24.1z"></path>
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M34.2,19.8c0,0.7,0,1.3-0.3,1.9c-0.3,0.5-0.7,0.8-1.2,0.8
+            c-0.7,0-1.1-0.5-1.1-1.3c0-1.5,1.3-1.8,2.6-1.8V19.8 M36,24.1c-0.1,0.1-0.3,0.1-0.4,0c-0.6-0.5-0.7-0.7-1-1.2c-1,1-1.6,1.3-2.9,1.3
+            c-1.5,0-2.6-0.9-2.6-2.7c0-1.4,0.8-2.4,1.9-2.9c1-0.4,2.3-0.5,3.3-0.6v-0.2c0-0.4,0-0.9-0.2-1.3c-0.2-0.3-0.6-0.5-1-0.5
+            c-0.7,0-1.3,0.3-1.4,1.1c0,0.2-0.1,0.3-0.3,0.3l-1.7-0.2c-0.1,0-0.3-0.1-0.3-0.4c0.4-2.1,2.3-2.7,3.9-2.7c0.9,0,2,0.2,2.6,0.9
+            c0.9,0.8,0.8,1.9,0.8,3v2.7c0,0.8,0.3,1.2,0.7,1.6c0.1,0.2,0.1,0.3,0,0.5C36.9,23.2,36.3,23.8,36,24.1L36,24.1z"></path>
+          </g>
+        </svg></a>
+      </div>
+      <div id="searchbox">
+        <div class="input-group margin-bottom-sm">
+          <input id="q" class="form-control searchfield" type="text" placeholder="Search... (ex: burgers)">
+          <span class="input-group-addon" id="go"><i class="fa fa-search fa-fw"></i></span>
+        </div>
+      </div>
+      <div class="user-dropdown">
+        <div class="btn-group pull-right">
+          <a class="btn btn-primary fill-aws-orange" href="#"><i class="fa fa-user fa-fw"></i> User</a>
+          <a class="btn btn-primary fill-aws-orange dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+            <span class="fa fa-caret-down"></span></a>
+            <ul class="dropdown-menu">
+              <li id="edit-address"><a href="#"><i class="fa fa-home fa-fw"></i> Edit Address</a></li>
+              <li id="edit-preferences"><a href="#"><i class="fa fa-cog fa-fw"></i> Edit Preferences</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="saved alert alert-success">
+        <span class="message-title">Success!</span> <span class="message"></span>
+      </div>
+      <div class="failed alert alert-danger">
+        <span class="message-title">Error!</span> <span class="message"></span>
+      </div>
+      <div class="info alert alert-info">
+        <span class="message-title">Info:</span> <span class="message"></span>
+      </div>
+      <div id="loader">
+        <div class="circle-large">
+          <div class="circle-med">
+            <div class="circle-small">
+              <div class='Cube panelLoad'>
+                <div class='cube-face cube-face-front'></div>
+                <div class='cube-face cube-face-back'></div>
+                <div class='cube-face cube-face-left'></div>
+                <div class='cube-face cube-face-right'></div>
+                <div class='cube-face cube-face-bottom'></div>
+                <div class='cube-face cube-face-top'></div>
+              </div>
+              <div id="loadingText">LOADING...</div>
+            </div></div>
+          </div>
+        </div>
+        <div id="user-address">
+
+          <div class="close-box">
+            <a class="btn btn-default" href="#"><i class="fa fa-close"></i></a>
+          </div>
+          <div id="user-address-form">
+            <h3><span class="spinner">
+              <i class="fa fa-spinner fa-spin"></i>
+            </span> User Address </h3>
+            <form id="address-block">
+              <fieldset>
+                <div class="form-group">
+                  <label for="country">Country</label>
+                  <select class="form-control" id="country" name="country">
+                    <option value="US">United States</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="address1">Address 1</label>
+                  <input placeholder="" class="form-control" id="address1" name="address1" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="address2">Address 2</label>
+                  <input placeholder="" class="form-control" id="address2" name="address2" type="text">
+                </div>
+                <div class="locality">
+                  <div style="display: none;" class="form-group">
+                    <label for="state" class="col-lg-3 control-label">State</label>
+                    <input style="display: none;" class="form-control" id="state" name="state" type="text">
+                  </div>
+                  <div class="form-group">
+                    <label for="city">City</label>
+                    <input placeholder="" class="form-control" id="city" name="city" type="text">
+                  </div><div class="form-group">
+                    <label for="zip">Postal code</label>
+                    <input placeholder="e.g. 1001" class="form-control" id="zip" name="zip" type="text">
+                  </div></div>
+                </fieldset>
+                <div class="form-group">
+                  <a class="btn btn-primary" id="update-address">Update/Create</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div id="user-settings">
+          <div id="user-settings-form" >
+            <div class="close-box">
+              <a class="btn btn-default" href="#"><i class="fa fa-close"></i></a>
+            </div>
+            <div class="form text-left">
+              <h3>
+                <span class="spinner">
+                  <i class="fa fa-spinner fa-spin"></i>
+                </span> User settings
+              </h3>
+              <form id="user-settings-form">
+                <div class="form-group">
+                  <div class="input-group margin-bottom-sm">
+                    <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+                    <input id="email" class="form-control" type="text" default="test-user@test.com" placeholder="Email Address">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="age">Age Group</label>
+                  <select id="age" class="form-control">
+                    <option value="0">Under 19</option>
+                    <option value="1">20 - 34</option>
+                    <option value="2">35 - 49</option>
+                    <option value="3">50 - 64</option>
+                    <option value="4">65+</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="budget">Budget Preference</label>
+                  <input type="hidden" value="1" id="budget"></input>
+                  <div class="btn-group" id="budgetButtons">
+                    <a class="btn btn-default" id="no-pref" title="No Preference" >Any</a>
+                    <a class="btn btn-default" id="under20" title="Under $20" ><i class="fa fa-dollar"></i></a>
+                    <a class="btn btn-default" id="20_30" title="$20 - $30" ><i class="fa fa-dollar"></i><i class="fa fa-dollar"></i></a>
+                    <a class="btn btn-default" id="30_50" title="$30 - $50" ><i class="fa fa-dollar"></i><i class="fa fa-dollar"></i><i class="fa fa-dollar"></i></a>
+                    <a class="btn btn-default" id="over50" title="Over $50"  ><i class="fa fa-dollar"></i><i class="fa fa-dollar"></i><i class="fa fa-dollar"></i><i class="fa fa-dollar"></i></a>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="gender">Gender</label>
+                  <select id="gender" class="form-control">
+                    <option value="0">Male</option>
+                    <option value="1">Female</option>
+                  </select>
+                </div>
+                <br />
+                <div class="form-group">
+                  <a class="btn btn-primary" id="update-preferences">Update/Create</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div id="map"></div>
+
+        <!-- build:js(.) scripts/vendors.js -->
+        <script src="/bower_components/jquery/dist/jquery.js"></script>
+        <script src="/bower_components/jquery-validation/dist/jquery.validate.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js(.) scripts/plugins.js -->
+        <script src="/bower_components/bootstrap/js/dropdown.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js({src/web,.tmp}) scripts/main.js -->
+        <script src="/scripts/jquery.addressfield.js"></script>
+        <script src="/scripts/main.js"></script>
+        <!-- endbuild -->
+
+      </body>
+      </html>
